@@ -29,18 +29,24 @@ background:#1f5ed6;
 /* HEADER */
 
 header{
-background:#0d47a1;
+background:transparent;
 color:white;
 padding:15px 40px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-
-position:sticky;
+position:fixed;
 top:0;
+left:0;
+width:100%;
 z-index:1000;
+transition:0.3s;
 }
 
+header.scrolled{
+background:#0d47a1;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
 .logo{
 display:flex;
 align-items:center;
@@ -350,7 +356,7 @@ dan berprestasi dalam bidang akademik maupun non akademik.
 
 <div class="guru">
 <img src="https://via.placeholder.com/100">
-<h4>Azril Supriyatna, S.Pd.</h4>
+<h4>Supriyatna, S.Pd.</h4>
 <p>Kepala Sekolah</p>
 </div>
 
@@ -648,6 +654,18 @@ loading="lazy">
 </p>
 
 </footer>
+<script>
+window.addEventListener("scroll", function(){
 
+var header = document.querySelector("header");
+
+if(window.scrollY > 50){
+header.classList.add("scrolled");
+}else{
+header.classList.remove("scrolled");
+}
+
+});
+</script>
 </body>
 </html>
