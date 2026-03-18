@@ -66,12 +66,12 @@ border-radius:10px;
 
 <h1 class="title">Kegiatan Ramadhan 2026</h1>
 
-<div class="grid">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;">
 
-<img src="ramadhan1.jpg" onclick="openImg(this)">
-<img src="ramadhan2.jpg" onclick="openImg(this)">
-<img src="ramadhan3.jpg" onclick="openImg(this)">
-<img src="ramadhan4.jpg" onclick="openImg(this)">
+<img src="ramadhan1.jpg" onclick="openImg(this)" style="width:100%;border-radius:10px;">
+<img src="ramadhan2.jpg" onclick="openImg(this)" style="width:100%;border-radius:10px;">
+<img src="ramadhan3.jpg" onclick="openImg(this)" style="width:100%;border-radius:10px;">
+<img src="ramadhan4.jpg" onclick="openImg(this)" style="width:100%;border-radius:10px;">
 
 </div>
 
@@ -81,27 +81,32 @@ border-radius:10px;
 
 </div>
 
-<div class="lightbox" id="lightbox" onclick="closeImg()">
-<img id="lightbox-img">
+<div id="lightbox" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+">
+
+<img id="lightbox-img" style="max-width:90%; max-height:90%; border-radius:10px;">
+
 </div>
-<h1>Kegiatan Ramadhan 2026</h1>
 
-<img src="ramadhan1.jpg" width="300">
-<img src="ramadhan2.jpg" width="300">
-<img src="ramadhan3.jpg" width="300">
-<img src="ramadhan4.jpg" width="300">
-<br><br>
-
-<a href="galeri.html">← Kembali ke Galeri</a>
 <script>
 function openImg(img){
 document.getElementById("lightbox").style.display = "flex";
 document.getElementById("lightbox-img").src = img.src;
 }
 
-function closeImg(){
-document.getElementById("lightbox").style.display = "none";
+document.getElementById("lightbox").onclick = function(){
+this.style.display = "none";
 }
 </script>
+
 </body>
 </html>
