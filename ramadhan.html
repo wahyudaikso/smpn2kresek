@@ -3,18 +3,105 @@
 <head>
 <title>Kegiatan Ramadhan 2026</title>
 </head>
+<style>
 
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background:#f5f7fa;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+.title{
+text-align:center;
+color:#0d47a1;
+margin-bottom:30px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+gap:20px;
+}
+
+.grid img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.grid img:hover{
+transform:scale(1.05);
+}
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
+display:none;
+align-items:center;
+justify-content:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
+
+</style>
 <body>
+<div class="container">
 
+<h1 class="title">Kegiatan Ramadhan 2026</h1>
+
+<div class="grid">
+
+<img src="ramadhan1.jpg" onclick="openImg(this)">
+<img src="ramadhan2.jpg" onclick="openImg(this)">
+<img src="ramadhan3.jpg" onclick="openImg(this)">
+<img src="ramadhan4.jpg" onclick="openImg(this)">
+
+</div>
+
+<a href="galeri.html" style="display:block;text-align:center;margin-top:30px;">
+← Kembali ke Galeri
+</a>
+
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeImg()">
+<img id="lightbox-img">
+</div>
 <h1>Kegiatan Ramadhan 2026</h1>
 
 <img src="ramadhan1.jpg" width="300">
 <img src="ramadhan2.jpg" width="300">
 <img src="ramadhan3.jpg" width="300">
-
+<img src="ramadhan4.jpg" width="300">
 <br><br>
 
 <a href="galeri.html">← Kembali ke Galeri</a>
+<script>
+function openImg(img){
+document.getElementById("lightbox").style.display = "flex";
+document.getElementById("lightbox-img").src = img.src;
+}
 
+function closeImg(){
+document.getElementById("lightbox").style.display = "none";
+}
+</script>
 </body>
 </html>
