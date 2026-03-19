@@ -87,7 +87,38 @@ justify-content:center;
 align-items:center;
 z-index:999;
 ">
+
+<div style="position:relative;">
+
+<button onclick="prevImg();event.stopPropagation();" style="
+position:absolute;
+left:-50px;
+top:50%;
+transform:translateY(-50%);
+font-size:30px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+">❮</button>
+
 <img id="lightbox-img" style="max-width:90%;max-height:90%;border-radius:10px;">
+
+<button onclick="nextImg();event.stopPropagation();" style="
+position:absolute;
+right:-50px;
+top:50%;
+transform:translateY(-50%);
+font-size:30px;
+background:none;
+border:none;
+color:white;
+cursor:pointer;
+">❯</button>
+
+</div>
+
+</div>
 </div>
 <div class="container">
 
@@ -133,13 +164,32 @@ align-items:center;
 </div>
 
 <script>
+let currentIndex = 0;
+let images = document.querySelectorAll(".grid img");
+
 function openImg(img){
 document.getElementById("lightbox").style.display = "flex";
 document.getElementById("lightbox-img").src = img.src;
+
+images.forEach((el, index) => {
+if(el === img){
+currentIndex = index;
+}
+});
 }
 
 function closeImg(){
 document.getElementById("lightbox").style.display = "none";
+}
+
+function nextImg(){
+currentIndex = (currentIndex + 1) % images.length;
+document.getElementById("lightbox-img").src = images[currentIndex].src;
+}
+
+function prevImg(){
+currentIndex = (currentIndex - 1 + images.length) % images.length;
+document.getElementById("lightbox-img").src = images[currentIndex].src;
 }
 </script>
 </body>
