@@ -163,39 +163,9 @@ align-items:center;
 </div>
 
 <script>
-let currentIndex = 0;
-let images = document.querySelectorAll("img");
-
-function openImg(img){
-document.getElementById("lightbox").style.display = "flex";
-document.getElementById("lightbox-img").src = img.src;
-
-images.forEach((el, index) => {
-if(el === img){
-currentIndex = index;
-}
-});
-}
-
-function closeImg(){
-document.getElementById("lightbox").style.display = "none";
-}
-
-function nextImg(){
-currentIndex = (currentIndex + 1) % images.length;
-document.getElementById("lightbox-img").src = images[currentIndex].src;
-}
-
-function prevImg(){
-currentIndex = (currentIndex - 1 + images.length) % images.length;
-document.getElementById("lightbox-img").src = images[currentIndex].src;
-}
-
-👇 TAMBAHKAN DI SINI 👇
-
-// KEYBOARD CONTROL
 document.addEventListener("keydown", function(e){
-if(document.getElementById("lightbox").style.display === "flex"){
+
+if(document.getElementById("lightbox").style.display !== "none"){
 
 if(e.key === "ArrowRight"){
 nextImg();
@@ -210,27 +180,8 @@ closeImg();
 }
 
 }
+
 });
-
-// SWIPE HP
-let startX = 0;
-
-document.getElementById("lightbox").addEventListener("touchstart", function(e){
-startX = e.touches[0].clientX;
-});
-
-document.getElementById("lightbox").addEventListener("touchend", function(e){
-let endX = e.changedTouches[0].clientX;
-
-if(startX - endX > 50){
-nextImg();
-}
-
-if(endX - startX > 50){
-prevImg();
-}
-});
-
 </script>
 </body>
 </html>
