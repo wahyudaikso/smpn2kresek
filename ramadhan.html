@@ -222,19 +222,27 @@ if(endX - startX > 50) prevImg();
 </script>
 <body style="padding-top:110px;">
 
-<header style="
-background:#0d47a1;
-padding:15px 40px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-z-index:1000;
-">
+<header>
+header{
+  background: transparent;
+  padding:15px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+
+  transition:0.3s;
+}
+
+header.scrolled{
+  background:#0d47a1;
+  box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
 <div style="display:flex;align-items:center;gap:12px;">
 <img src="logo.png" style="width:55px;">
 
@@ -254,5 +262,15 @@ z-index:1000;
 </nav>
 
 </header>
+<script>
+window.addEventListener("scroll", function(){
+  const header = document.querySelector("header");
+  if(window.scrollY > 50){
+    header.classList.add("scrolled");
+  }else{
+    header.classList.remove("scrolled");
+  }
+});
+</script>
 </body>
 </html>
