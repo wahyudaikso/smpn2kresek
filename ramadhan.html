@@ -1,338 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kegiatan Ramadhan 2026</title>
+  <title>Kegiatan Sekolah</title>
+
+  <style>
+    header{
+      background:#0d47a1;
+      padding:15px 40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+    }
+
+    body{
+      font-family:Arial;
+      padding-top:100px;
+      background:#f5f7fa;
+    }
+
+    .title{
+      text-align:center;
+      color:#0d47a1;
+      margin-bottom:30px;
+    }
+  </style>
 </head>
+
 <style>
-header{
-  background: transparent;
-  padding:15px 40px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-
-  transition:0.3s;
-}
-
-header.scrolled{
-  background:#0d47a1;
-  box-shadow:0 2px 10px rgba(0,0,0,0.2);
-}
-.fade-in{
-opacity:0;
-transform:translateY(20px);
-animation:fadeIn 1s ease forwards;
-animation-fill-mode:forwards;
-}
-
-@keyframes fadeIn{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
 body{
-font-family:Arial, sans-serif;
-margin:0;
-background:#f5f7fa;
-}
-
-.container{
-max-width:1200px;
-margin:auto;
-padding:40px 20px;
+  font-family:Arial;
+  padding-top:100px;
+  background:#f5f7fa;
 }
 
 .title{
   text-align:center;
-  font-size:28px;
   color:#0d47a1;
   margin-bottom:30px;
-  position:relative;
 }
 
-.title::after{
-  content:"";
-  display:block;
-  width:60px;
-  height:3px;
-  background:#0d47a1;
-  margin:10px auto 0;
-  border-radius:5px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-gap:20px;
-}
-
-.grid img{
-width:100%;
-height:150px;
-object-fit:cover;
-border-radius:12px;
-cursor:pointer;
-transition:0.3s;
-}
-
-.grid img:hover{
-transform:scale(1.05);
-}
-
-.lightbox{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-display:none;
-align-items:center;
-justify-content:center;
-}
-
-.lightbox img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
-}
-
-/* GRID FOTO */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
+  padding:20px;
 }
 
-/* FOTO */
-.grid img{
+.card{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card img{
   width:100%;
   height:180px;
   object-fit:cover;
-  border-radius:12px;
-  transition:0.3s;
-  cursor:pointer;
 }
 
-/* HOVER */
-.grid img:hover{
-  transform:scale(1.05);
-  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+.card h3{
+  padding:15px;
+  margin:0;
+  color:#0d47a1;
 }
 
-/* ANIMASI MASUK */
-.fade-in{
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeInUp 0.8s ease forwards;
-}
-
-@keyframes fadeInUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-.back-btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:10px 20px;
-  background:#0d47a1;
-  color:white;
+a{
   text-decoration:none;
-  border-radius:8px;
-  font-weight:bold;
-  transition:0.3s;
-}
-
-.back-btn:hover{
-  background:#1565c0;
-  transform:translateY(-2px);
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-
-nav a{
-  position:relative;
-  color:white;
-  text-decoration:none;
-  margin-left:20px;
-  font-weight:bold;
-}
-
-nav a::after{
-  content:"";
-  position:absolute;
-  width:0%;
-  height:2px;
-  left:0;
-  bottom:-5px;
-  background:white;
-  transition:0.3s;
-}
-
-nav a:hover::after{
-  width:100%;
-}
-
-header{
-  backdrop-filter:blur(10px);
-  background:rgba(13,71,161,0.85);
-  box-shadow:0 6px 20px rgba(0,0,0,0.25);
-  transition:0.3s;
+  color:inherit;
 }
 </style>
-<body>
-<div id="lightbox" onclick="closeImg()" style="
-display:none;
+
+</head>
+
+<body style="padding-top:100px;">
+
+<header style="
+background:#0d47a1;
+padding:15px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 position:fixed;
 top:0;
 left:0;
 width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-justify-content:center;
-align-items:center;
-z-index:999;
+z-index:1000;
 ">
-
-<div style="position:relative;">
-
-<button onclick="prevImg();event.stopPropagation();" style="
-position:absolute;
-left:-50px;
-top:50%;
-transform:translateY(-50%);
-font-size:30px;
-background:none;
-border:none;
-color:white;
-cursor:pointer;
-">❮</button>
-
-<img id="lightbox-img" style="max-width:90%;max-height:90%;border-radius:10px;">
-
-<button onclick="nextImg();event.stopPropagation();" style="
-position:absolute;
-right:-50px;
-top:50%;
-transform:translateY(-50%);
-font-size:30px;
-background:none;
-border:none;
-color:white;
-cursor:pointer;
-">❯</button>
-</div>
-
-</div>
-</div>
-<div class="container">
-
-<h1 class="title">Kegiatan Ramadhan 2026</h1>
-
-<div class="grid">
-
-  <img src="ramadhan1.jpg" class="fade-in" onclick="openImg(this)" style="animation-delay:0.1s;">
-  <img src="ramadhan2.jpg" class="fade-in" onclick="openImg(this)" style="animation-delay:0.3s;">
-  <img src="ramadhan3.jpg" class="fade-in" onclick="openImg(this)" style="animation-delay:0.5s;">
-  <img src="ramadhan4.jpg" class="fade-in" onclick="openImg(this)" style="animation-delay:0.7s;">
-
-</div>
-
-<a href="galeri.html" class="back-btn">← Kembali ke Galeri</a>
-
-</div>
-
-<div id="lightbox" style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-justify-content:center;
-align-items:center;
-">
-
-<img id="lightbox-img" style="max-width:90%; max-height:90%; border-radius:10px;">
-
-</div>
-
-<script>
-let currentIndex = 0;
-let images = document.querySelectorAll("img");
-
-function openImg(img){
-const lightbox = document.getElementById("lightbox");
-lightbox.style.display = "flex";
-document.getElementById("lightbox-img").src = img.src;
-
-images.forEach((el, index) => {
-if(el === img){
-currentIndex = index;
-}
-});
-}
-
-function closeImg(){
-document.getElementById("lightbox").style.display = "none";
-}
-
-function nextImg(){
-currentIndex = (currentIndex + 1) % images.length;
-document.getElementById("lightbox-img").src = images[currentIndex].src;
-}
-
-function prevImg(){
-currentIndex = (currentIndex - 1 + images.length) % images.length;
-document.getElementById("lightbox-img").src = images[currentIndex].src;
-}
-
-// KEYBOARD (FIXED)
-document.addEventListener("keydown", function(e){
-const lightbox = document.getElementById("lightbox");
-
-if(lightbox.style.display === "flex"){
-
-if(e.key === "ArrowRight") nextImg();
-if(e.key === "ArrowLeft") prevImg();
-if(e.key === "Escape") closeImg();
-
-}
-});
-
-// SWIPE HP (FIXED)
-let startX = 0;
-const lightbox = document.getElementById("lightbox");
-
-lightbox.addEventListener("touchstart", function(e){
-startX = e.touches[0].clientX;
-});
-
-lightbox.addEventListener("touchend", function(e){
-let endX = e.changedTouches[0].clientX;
-
-if(startX - endX > 50) nextImg();
-if(endX - startX > 50) prevImg();
-});
-</script>
-<body style="padding-top:110px;">
-
-<header>
 
 <div style="display:flex;align-items:center;gap:12px;">
 <img src="logo.png" style="width:55px;">
-
 <div>
 <h2 style="color:white;margin:0;">SMP Negeri 2 Kresek</h2>
 <small style="color:#cfd8ff;">Kabupaten Tangerang</small>
@@ -340,24 +108,30 @@ if(endX - startX > 50) prevImg();
 </div>
 
 <nav style="display:flex;gap:25px;font-weight:bold;">
-<a href="index.html">Beranda</a>
-<a href="index.html#profil">Profil</a>
-<a href="index.html#guru">Guru</a>
-<a href="index.html#berita">Berita</a>
-<a href="galeri.html">Galeri</a>
-<a href="index.html#kontak">Kontak</a>
+<a href="index.html" style="color:white;text-decoration:none;">Beranda</a>
+<a href="index.html#profil" style="color:white;text-decoration:none;">Profil</a>
+<a href="index.html#guru" style="color:white;text-decoration:none;">Guru</a>
+<a href="index.html#berita" style="color:white;text-decoration:none;">Berita</a>
+<a href="galeri.html" style="color:white;text-decoration:none;">Galeri</a>
+<a href="index.html#kontak" style="color:white;text-decoration:none;">Kontak</a>
 </nav>
 
 </header>
-<script>
-window.addEventListener("scroll", function(){
-  const header = document.querySelector("header");
-  if(window.scrollY > 50){
-    header.classList.add("scrolled");
-  }else{
-    header.classList.remove("scrolled");
-  }
-});
-</script>
+
+<h1 class="title">Kegiatan Ramadhan</h1>
+
+<div style="text-align:center;">
+  <a href="kegiatan.html" style="
+  display:inline-block;
+  margin-top:30px;
+  padding:10px 20px;
+  background:#0d47a1;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  ">
+  ← Kembali ke Kegiatan
+  </a>
+</div>
 </body>
 </html>
