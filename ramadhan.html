@@ -130,7 +130,7 @@ z-index:1000;
 
 <div class="grid">
 
-<img src="ramadhan1.jpg" class="fade-in" onclick="openImg(this)">
+<img src="ramadhan1.jpg" onclick="openImg(this)">
 <img src="ramadhan2.jpg" class="fade-in" onclick="openImg(this)">
 <img src="ramadhan3.jpg" class="fade-in" onclick="openImg(this)">
 <img src="ramadhan4.jpg" class="fade-in" onclick="openImg(this)">
@@ -149,7 +149,16 @@ transition:0.3s;
 ">
 ← Kembali ke Kegiatan
 </a>
+  <script>
+function openImg(img){
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = img.src;
+}
 
+function closeImg(){
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
 </div>
   <div id="lightbox" onclick="closeImg()" style="
 display:none;
@@ -167,15 +176,5 @@ z-index:9999;
 <img id="lightbox-img" style="max-width:90%; max-height:90%; border-radius:10px;">
 
 </div>
-  <script>
-function openImg(img){
-  document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = img.src;
-}
-
-function closeImg(){
-  document.getElementById("lightbox").style.display = "none";
-}
-</script>
 </body>
 </html>
