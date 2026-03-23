@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kegiatan Sekolah</title>
+
+  <style>
+    header{
+      background:#0d47a1;
+      padding:15px 40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+    }
+
+    body{
+      font-family:Arial;
+      padding-top:100px;
+      background:#f5f7fa;
+    }
+
+    .title{
+      text-align:center;
+      color:#0d47a1;
+      margin-bottom:30px;
+    }
+  </style>
+</head>
+
+<style>
+body{
+  font-family:Arial;
+  padding-top:100px;
+  background:#f5f7fa;
+}
+
+.title{
+  text-align:center;
+  color:#0d47a1;
+  margin-bottom:30px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.card h3{
+  padding:15px;
+  margin:0;
+  color:#0d47a1;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+</style>
+
+</head>
+
+<body style="padding-top:100px;">
+
+<header style="
+background:#0d47a1;
+padding:15px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+">
+
+<div style="display:flex;align-items:center;gap:12px;">
+<img src="logo.png" style="width:55px;">
+<div>
+<h2 style="color:white;margin:0;">SMP Negeri 2 Kresek</h2>
+<small style="color:#cfd8ff;">Kabupaten Tangerang</small>
+</div>
+</div>
+
+<nav style="display:flex;gap:25px;font-weight:bold;">
+<a href="index.html" style="color:white;text-decoration:none;">Beranda</a>
+<a href="index.html#profil" style="color:white;text-decoration:none;">Profil</a>
+<a href="index.html#guru" style="color:white;text-decoration:none;">Guru</a>
+<a href="index.html#berita" style="color:white;text-decoration:none;">Berita</a>
+<a href="galeri.html" style="color:white;text-decoration:none;">Galeri</a>
+<a href="index.html#kontak" style="color:white;text-decoration:none;">Kontak</a>
+</nav>
+
+</header>
+
+<h1 class="title">Kegiatan Adiwiyata</h1>
+
+<div class="grid">
+
+<img src="adiwiyata1.jpg">
+<img src="adiwiyata2.jpg">
+<img src="adiwiyata3.jpg">
+
+<div style="text-align:center;">
+  <a href="kegiatan.html" style="
+  display:inline-block;
+  margin-top:30px;
+  padding:10px 20px;
+  background:#0d47a1;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  ">
+  ← Kembali ke Kegiatan
+  </a>
+</div>
+</body>
+</html>
