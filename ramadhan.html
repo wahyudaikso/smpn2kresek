@@ -116,6 +116,20 @@ border-radius:10px;
   box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
+/* ANIMASI MASUK */
+.fade-in{
+  opacity:0;
+  transform:translateY(20px);
+  animation:fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 </style>
 <body>
 <div id="lightbox" onclick="closeImg()" style="
