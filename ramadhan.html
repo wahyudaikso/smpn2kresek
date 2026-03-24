@@ -137,10 +137,10 @@ z-index:1000;
 
 <div class="grid">
 
-<img src="ramadhan1.jpg" class="fade-in" onclick="openImg(this)">
-<img src="ramadhan2.jpg" class="fade-in" onclick="openImg(this)">
-<img src="ramadhan3.jpg" class="fade-in" onclick="openImg(this)">
-<img src="ramadhan4.jpg" class="fade-in" onclick="openImg(this)">
+<img src="ramadhan1.jpg" class="fade-in" onclick="openImg(this.src)">
+<img src="ramadhan2.jpg" class="fade-in" onclick="openImg(this.src)">
+<img src="ramadhan3.jpg" class="fade-in" onclick="openImg(this.src)">
+<img src="ramadhan4.jpg" class="fade-in" onclick="openImg(this.src)">
 
 <div style="text-align:center; margin-top:40px;">
   <a href="kegiatan.html" style="
@@ -209,12 +209,9 @@ cursor:pointer;
 let currentIndex = 0;
 let images = document.querySelectorAll(".grid img");
 
-function openImg(img){
-  document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightbox-img").src = img.src;
-
-  images = document.querySelectorAll(".grid img");
-  currentIndex = Array.from(images).indexOf(img);
+function openImg(src){
+ document.getElementById("lightbox").style.display = "flex";
+ document.getElementById("lightbox-img").src = src;
 }
 
 function closeImg(){
