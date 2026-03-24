@@ -137,10 +137,10 @@ z-index:1000;
 
 <div class="grid">
 
-<img src="ramadhan1.jpg" class="fade-in" onclick="openImg(this.src)">
-<img src="ramadhan2.jpg" class="fade-in" onclick="openImg(this.src)">
-<img src="ramadhan3.jpg" class="fade-in" onclick="openImg(this.src)">
-<img src="ramadhan4.jpg" class="fade-in" onclick="openImg(this.src)">
+<img src="ramadhan1.jpg" onclick="openImg(0)">
+<img src="ramadhan2.jpg" onclick="openImg(1)">
+<img src="ramadhan3.jpg" onclick="openImg(2)">
+<img src="ramadhan4.jpg" onclick="openImg(3)">
 
 <div style="text-align:center; margin-top:40px;">
   <a href="kegiatan.html" style="
@@ -156,7 +156,7 @@ z-index:1000;
   </a>
 </div>
   
-<div id="lightbox" onclick="closeImg()" style="
+<div id="lightbox" style="
 display:none;
 position:fixed;
 top:0;
@@ -168,64 +168,79 @@ justify-content:center;
 align-items:center;
 z-index:9999;
 ">
-<img id="lightbox-img" style="
-width:auto;
-height:auto;
-max-width:95vw;
-max-height:95vh;
-object-fit:contain;
-border-radius:12px;
-box-shadow:0 20px 60px rgba(0,0,0,0.7);
-display:block;
-margin:auto;
-">
-<button onclick="prevImg(event)" style="
+
+<!-- tombol close -->
+<span onclick="closeImg()" style="
+position:absolute;
+top:20px;
+right:30px;
+font-size:30px;
+color:white;
+cursor:pointer;
+">&times;</span>
+
+<!-- tombol kiri -->
+<span onclick="prevImg(event)" style="
 position:absolute;
 left:20px;
 top:50%;
 transform:translateY(-50%);
 font-size:40px;
-background:none;
-border:none;
 color:white;
 cursor:pointer;
-">❮</button>
+">&#10094;</span>
 
-<button onclick="nextImg(event)" style="
+<!-- gambar -->
+<img id="lightbox-img" style="
+max-width:95vw;
+max-height:95vh;
+border-radius:12px;
+box-shadow:0 20px 60px rgba(0,0,0,0.7);
+transition:all 0.3s ease;
+">
+
+<!-- tombol kanan -->
+<span onclick="nextImg(event)" style="
 position:absolute;
 right:20px;
 top:50%;
 transform:translateY(-50%);
 font-size:40px;
-background:none;
-border:none;
 color:white;
 cursor:pointer;
-">❯</button>
+">&#10095;</span>
+
 </div>
 <script>
-let currentIndex = 0;
-let images = document.querySelectorAll(".grid img");
+let images = [
+ "ramadhan1.jpg",
+ "ramadhan2.jpg",
+ "ramadhan3.jpg",
+ "ramadhan4.jpg"
+];
 
-function openImg(src){
+let currentIndex = 0;
+
+function openImg(index){
+ currentIndex = index;
  document.getElementById("lightbox").style.display = "flex";
- document.getElementById("lightbox-img").src = src;
+ document.getElementById("lightbox-img").src = images[currentIndex];
 }
 
 function closeImg(){
  document.getElementById("lightbox").style.display = "none";
 }
 
-function nextImg(event){
-  event.stopPropagation();
-  currentIndex = (currentIndex + 1) % images.length;
-  document.getElementById("lightbox-img").src = images[currentIndex].src;
+function nextImg(e){
+ e.stopPropagation();
+ currentIndex = (currentIndex + 1) % images.length;
+ document.getElementById("lightbox-img").src = images[currentIndex];
 }
 
-function prevImg(event){
-  event.stopPropagation();
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  document.getElementById("lightbox-img").src = images[currentIndex].src;
+function prevImg(e){
+ e.stopPropagation();
+ currentIndex = (currentIndex - 1 + images.length) % images.length;
+ document.getElementById("lightbox-img").src = images[currentIndex];
 }
 </script>
 </body>
