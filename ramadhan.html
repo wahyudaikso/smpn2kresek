@@ -16,10 +16,10 @@ header{
   width:100%;
   z-index:1000;
 }
-body{
-  font-family:Arial;
-  padding-top:100px;
-  background:#f5f7fa;
+body {
+    font-family: Arial;
+    padding-top: 100px;
+    background: linear-gradient(to bottom, #f5f7fa, #e4ecf7);
 }
 .title{
   text-align:center;
@@ -40,8 +40,32 @@ body{
   cursor:pointer;
   transition:0.3s;
 }
-#lightbox-img {
-  transition: all 0.3s ease;
+.grid img {
+  transition: 0.3s ease;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.grid img:hover {
+  transform: scale(1.05);
+}
+.grid {
+  margin-top: 30px;
+}
+    
+#lightbox img {
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
   </style>
 </head>
@@ -137,10 +161,10 @@ z-index:1000;
 
 <div class="grid">
 
-<img src="ramadhan1.jpg" onclick="openImg(0)">
-<img src="ramadhan2.jpg" onclick="openImg(1)">
-<img src="ramadhan3.jpg" onclick="openImg(2)">
-<img src="ramadhan4.jpg" onclick="openImg(3)">
+<img src="ramadhan1.jpg" class="fade-in" onclick="openImg(0)">
+<img src="ramadhan2.jpg" class="fade-in" onclick="openImg(1)">
+<img src="ramadhan3.jpg" class="fade-in" onclick="openImg(2)">
+<img src="ramadhan4.jpg" class="fade-in" onclick="openImg(3)">
 </div>
 <div style="text-align:center; margin-top:40px;">
   <a href="kegiatan.html" style="
