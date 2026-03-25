@@ -67,6 +67,33 @@ body {
         opacity: 1;
     }
 }
+    .back-button {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.back-button a {
+  display: inline-block;
+  background: #0d47a1;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+
+  /* 🔥 efek */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.back-button a:hover {
+  background: #1565c0;
+  transform: translateY(-3px);
+}
+    .back-button a:active {
+  transform: scale(0.97);
+}
   </style>
 </head>
 
@@ -166,18 +193,8 @@ z-index:1000;
 <img src="ramadhan3.jpg" class="fade-in" onclick="openImg(2)">
 <img src="ramadhan4.jpg" class="fade-in" onclick="openImg(3)">
 </div>
-<div style="text-align:center; margin-top:40px;">
-  <a href="kegiatan.html" style="
-  display:inline-block;
-  background:#0d47a1;
-  color:white;
-  padding:12px 25px;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:bold;
-  ">
-  ← Kembali ke Kegiatan
-  </a>
+<div class="back-button">
+  <a href="kegiatan.html">← Kembali ke Kegiatan</a>
 </div>
 <div id="lightbox" style="
 display:none;
