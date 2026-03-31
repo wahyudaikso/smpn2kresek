@@ -429,7 +429,7 @@ Hubungi Kami
 
 </section>
 
-<section class="container">
+<section class="container reveal">
   <h2 class="section-title">Sambutan Kepala Sekolah</h2>
 
   <div style="display:flex; gap:40px; align-items:center; flex-wrap:wrap;">
@@ -448,7 +448,7 @@ Hubungi Kami
 
 </div>
   
-<section class="container">
+<section class="container reveal">
 
 <h2 class="section-title">Visi & Misi Sekolah</h2>
 
@@ -474,7 +474,7 @@ berkarakter, dan berwawasan lingkungan.
 
 </section>
 
-<section class="container profil" id="profil">
+<section class="container reveal">
 
 <h2 class="section-title">Profil Sekolah</h2>
 
@@ -488,7 +488,7 @@ dan berprestasi dalam bidang akademik maupun non akademik.
 
 </div>
 
-<div class="container" id="guru">
+<section class="container reveal">
 
 <h2 class="section-title">Data Guru</h2>
 
@@ -725,7 +725,7 @@ dan berprestasi dalam bidang akademik maupun non akademik.
 
 </div>
 
-<div class="container" id="galeri">
+<section class="container reveal">
 
 <h2 class="section-title">Galeri Sekolah</h2>
 
@@ -808,19 +808,21 @@ align-items:start;
 
 </footer>
 <script>
-window.addEventListener("scroll", function(){
+function revealOnScroll() {
   const reveals = document.querySelectorAll(".reveal");
 
-  reveals.forEach(function(el){
+  reveals.forEach((el) => {
     const windowHeight = window.innerHeight;
     const elementTop = el.getBoundingClientRect().top;
-    const visible = 100;
 
-    if(elementTop < windowHeight - visible){
+    if (elementTop < windowHeight - 100) {
       el.classList.add("active");
     }
   });
-});
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
 </script>
   <a href="https://wa.me/6285882126104" target="_blank" class="wa-float">
   💬
