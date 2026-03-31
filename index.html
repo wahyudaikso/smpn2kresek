@@ -22,9 +22,8 @@ font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-background:#1f5ed6;
+background:#f5f7fb;
 }
-<style>
   
 /* HEADER */
 
@@ -70,8 +69,6 @@ text-decoration:underline;
 
 /* HERO */
 
-<style>
-
 .hero h1{
 opacity:0;
 transform:translateY(20px);
@@ -102,6 +99,24 @@ animation:zoomHero 20s ease-in-out infinite alternate;
 position:relative;
 z-index:2;
 }
+.hero{
+padding:180px 20px;
+}
+
+.hero h1{
+font-weight:700;
+letter-spacing:1px;
+}
+
+.hero-title{
+font-size:55px;
+margin-bottom:10px;
+}
+ 
+.hero-text{
+font-size:22px;
+margin-bottom:30px;
+}
 
 @keyframes zoomHero{
 0%{
@@ -112,15 +127,19 @@ transform:scale(1.1);
 }
 }
 
-<style>
-
+.hero-text{
+font-size:22px;
+margin-bottom:30px;
+}
 /* SECTION */
 
 .container{
 max-width:1200px;
-margin:auto;
+margin:40px auto;
 padding:50px 20px;
 background:white;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 }
 
 .section-title{
@@ -287,13 +306,9 @@ color:white;
 
 <div class="hero-content">
 
-<h1 style="font-size:55px;margin-bottom:10px;">
-SMPN 2 KRESEK
-</h1>
+<h1 class="hero-title">SMPN 2 KRESEK</h1>
 
-<p style="font-size:22px;margin-bottom:30px;">
-Berkarakter, Bahagia, Yes.
-</p>
+<p class="hero-text">Berkarakter, Bahagia, Yes.</p>
 
 <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
 
@@ -333,24 +348,21 @@ Hubungi Kami
 
 </section>
 
-<h2 class="section-title">Sambutan Kepala Sekolah</h2>
-<div style="display:flex; gap:40px; align-items:center; flex-wrap:wrap;">
+<section class="container">
+  <h2 class="section-title">Sambutan Kepala Sekolah</h2>
 
-<img src="kepala-sekolah.jpg" style="width:250px; border-radius:10px;">
+  <div style="display:flex; gap:40px; align-items:center; flex-wrap:wrap;">
 
-<p style="text-align:center; max-width:700px; margin:auto; line-height:1.8;">
-Assalamu'alaikum Warahmatullahi Wabarakatuh.<br><br>
+    <img src="kepala-sekolah.jpg" style="width:250px; border-radius:10px;">
 
-Selamat datang di Website Resmi SMP Negeri 2 Kresek Kabupaten Tangerang.
-Website ini dibuat sebagai media informasi sekolah bagi siswa, orang tua, 
-dan masyarakat luas mengenai kegiatan, prestasi, serta perkembangan sekolah.
+    <p style="max-width:700px; line-height:1.8;">
+      Assalamu'alaikum Warahmatullahi Wabarakatuh
+      Selamat datang di website resmi SMPN 2 Kresek Kabupaten Tangerang. Website ini dibuat sebagai media informasi sekolah bagi siswa, orang tua, dan masyarakat luas mengenai kegiatan, prestasi, serta perkembangan sekolah.
+      Kami berharap website ini dapat memberikan manfaat dan menjadi sarana komunikasi yang baik antara sekolah dan masyarakat.
+      Wassalamuálaikum Warahmatullahi Wabarakatuh
+    </p>
 
-Kami berharap website ini dapat memberikan manfaat dan menjadi sarana 
-komunikasi yang baik antara sekolah dan masyarakat.
-
-Wassalamu'alaikum Warahmatullahi Wabarakatuh.
-</p>
-
+  </div>
 </section>
 
 </div>
@@ -604,7 +616,6 @@ dan berprestasi dalam bidang akademik maupun non akademik.
 <h4>Sanah</h4>
 <p>Staff Operasional Sekolah</p>
 </div>
-
 
 </div>
 
