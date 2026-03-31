@@ -339,6 +339,19 @@ footer iframe{
 .wa-float:hover{
   transform:scale(1.1);
 }
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+transition:all 1s ease;
 </style>
 
 </head>
@@ -796,15 +809,17 @@ align-items:start;
 </footer>
 <script>
 window.addEventListener("scroll", function(){
+  const reveals = document.querySelectorAll(".reveal");
 
-var header = document.querySelector("header");
+  reveals.forEach(function(el){
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    const visible = 100;
 
-if(window.scrollY > 50){
-header.classList.add("scrolled");
-}else{
-header.classList.remove("scrolled");
-}
-
+    if(elementTop < windowHeight - visible){
+      el.classList.add("active");
+    }
+  });
 });
 </script>
   <a href="https://wa.me/6285882126104" target="_blank" class="wa-float">
