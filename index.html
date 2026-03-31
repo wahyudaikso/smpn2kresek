@@ -257,6 +257,29 @@ text-align:center;
 padding:20px;
 }
 
+.btn{
+  padding:12px 28px;
+  border-radius:6px;
+  text-decoration:none;
+  font-weight:bold;
+  display:inline-block;
+  transition:0.3s;
+}
+
+.btn-primary{
+  background:#2d6cdf;
+  color:white;
+}
+
+.btn-dark{
+  background:#444;
+  color:white;
+}
+
+.btn:hover{
+  opacity:0.85;
+}
+
 </style>
 
 </head>
@@ -312,25 +335,11 @@ color:white;
 
 <div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
 
-<a href="#profil" style="
-background:#2d6cdf;
-color:white;
-padding:12px 28px;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold;
-">
+<a href="#profil" class="btn btn-primary">
 Tentang Kami
 </a>
 
-<a href="#kontak" style="
-background:#444;
-color:white;
-padding:12px 28px;
-border-radius:6px;
-text-decoration:none;
-font-weight:bold;
-">
+<a href="#kontak" class="btn btn-dark">
 Hubungi Kami
 </a>
 
