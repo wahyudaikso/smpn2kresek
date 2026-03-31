@@ -367,6 +367,56 @@ footer iframe{
 }
 
 transition:all 1s ease;
+
+/* TOTAL SISWA */
+.total-siswa{
+  font-size:40px;
+  font-weight:bold;
+  text-align:center;
+  color:#0d47a1;
+  margin-bottom:30px;
+}
+
+/* ANGKATAN */
+.angkatan-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:20px;
+  text-align:center;
+}
+
+.angkatan-grid div{
+  background:#f4f6fb;
+  padding:20px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.angkatan-grid div:hover{
+  background:#2d6cdf;
+  color:white;
+}
+
+/* KELAS */
+.kelas-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.kelas-grid div{
+  background:#eef2ff;
+  padding:12px;
+  border-radius:8px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.kelas-grid div:hover{
+  background:#0d47a1;
+  color:white;
+}
 </style>
 
 </head>
@@ -433,7 +483,60 @@ Hubungi Kami
 </div>
 
 </section>
+  
+<section class="container reveal">
 
+<h2 class="section-title">Data Siswa</h2>
+
+<!-- TOTAL -->
+<div class="total-siswa">
+  676 Siswa
+</div>
+
+<!-- PER ANGKATAN -->
+<div class="angkatan-grid">
+  <div>Kelas 7<br><strong>249 siswa</strong></div>
+  <div>Kelas 8<br><strong>209 siswa</strong></div>
+  <div>Kelas 9<br><strong>137 siswa</strong></div>
+</div>
+
+</section>
+
+<section class="container reveal">
+
+<h2 class="section-title">Detail Kelas</h2>
+
+<h3>Kelas 7</h3>
+<div class="kelas-grid">
+  <div>7.1 - 36</div>
+  <div>7.2 - 35</div>
+  <div>7.3 - 36</div>
+  <div>7.4 - 36</div>
+  <div>7.5 - 36</div>
+  <div>7.6 - 35</div>
+  <div>7.7 - 35</div>
+</div>
+
+<h3>Kelas 8</h3>
+<div class="kelas-grid">
+  <div>8.1 - 34</div>
+  <div>8.2 - 34</div>
+  <div>8.3 - 34</div>
+  <div>8.4 - 36</div>
+  <div>8.5 - 34</div>
+  <div>8.6 - 37</div>
+</div>
+
+<h3>Kelas 9</h3>
+<div class="kelas-grid">
+  <div>9.1 - 35</div>
+  <div>9.2 - 35</div>
+  <div>9.3 - 34</div>
+  <div>9.4 - 33</div>
+</div>
+
+</section>
+  
 <section class="container reveal">
 
 <h2 class="section-title">Fasilitas Sekolah</h2>
