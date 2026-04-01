@@ -3,22 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <title>Kelas 7 - SMPN 2 Kresek</title>
+
+<style>
+body{
+  font-family:Arial;
+  background:#f5f7fb;
+  margin:0;
+}
+
+.header{
+  background:#0d47a1;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+.container{
+  max-width:900px;
+  margin:40px auto;
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+.kelas-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:15px;
+}
+
+.kelas-card{
+  background:#eef2ff;
+  padding:15px;
+  text-align:center;
+  border-radius:10px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.kelas-card:hover{
+  background:#2d6cdf;
+  color:white;
+  transform:translateY(-5px);
+}
+
+.back{
+  display:inline-block;
+  margin-top:20px;
+  text-decoration:none;
+  color:#0d47a1;
+  font-weight:bold;
+}
+</style>
+
 </head>
 <body>
 
-<h1>Detail Kelas 7</h1>
+<div class="header">
+  <h1>Kelas 7</h1>
+  <p>SMP Negeri 2 Kresek</p>
+</div>
 
-<ul>
-<li>7.1 - 36 siswa</li>
-<li>7.2 - 35 siswa</li>
-<li>7.3 - 36 siswa</li>
-<li>7.4 - 36 siswa</li>
-<li>7.5 - 36 siswa</li>
-<li>7.6 - 35 siswa</li>
-<li>7.7 - 35 siswa</li>
-</ul>
+<div class="container">
 
-<a href="index.html">← Kembali</a>
+<div class="kelas-grid">
+  <div class="kelas-card">7.1<br>36 siswa</div>
+  <div class="kelas-card">7.2<br>35 siswa</div>
+  <div class="kelas-card">7.3<br>36 siswa</div>
+  <div class="kelas-card">7.4<br>36 siswa</div>
+  <div class="kelas-card">7.5<br>36 siswa</div>
+  <div class="kelas-card">7.6<br>35 siswa</div>
+  <div class="kelas-card">7.7<br>35 siswa</div>
+</div>
+
+<a href="index.html" class="back">← Kembali ke Beranda</a>
+
+</div>
 
 </body>
 </html>
