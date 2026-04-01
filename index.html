@@ -960,25 +960,22 @@ window.addEventListener("load", revealOnScroll);
 <script>
 let count = 0;
 const target = 676;
-const speed = 5;
 
 function animateCounter(){
   const counter = document.getElementById("counter");
 
-  const update = () => {
+  let interval = setInterval(() => {
     if(count < target){
       count += 5;
       counter.innerText = count;
-      setTimeout(update, speed);
     } else {
       counter.innerText = target;
+      clearInterval(interval);
     }
-  };
-
-  update();
+  }, 10);
 }
 
-window.addEventListener("load", animateCounter);
+window.onload = animateCounter;
 </script>
 </body>
 </html>
