@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kelas 8 - SMPN 2 Kresek</title>
+
+<style>
+body{
+  font-family:Arial;
+  background:#f5f7fb;
+  margin:0;
+}
+
+.header{
+  background:#0d47a1;
+  color:white;
+  padding:20px;
+  text-align:center;
+}
+
+.container{
+  max-width:900px;
+  margin:40px auto;
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+.kelas-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:15px;
+}
+
+.kelas-card{
+  background:#eef2ff;
+  padding:15px;
+  text-align:center;
+  border-radius:10px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.kelas-card:hover{
+  background:#2d6cdf;
+  color:white;
+  transform:translateY(-5px);
+}
+
+.back{
+  display:inline-block;
+  margin-top:20px;
+  text-decoration:none;
+  color:#0d47a1;
+  font-weight:bold;
+}
+
+.btn-kembali{
+  display:inline-block;
+  margin-top:25px;
+  padding:10px 20px;
+  background:#0d47a1;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn-kembali:hover{
+  background:#1565c0;
+  transform:translateX(-5px);
+}
+
+.btn-kembali{
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* posisi tengah */
+.btn-center{
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
+}
+
+/* tombol pill */
+.btn-pill{
+  display:inline-block;
+  padding:12px 28px;
+  background:#1e4fa3;
+  color:white;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+/* hover */
+.btn-pill:hover{
+  background:#1565c0;
+  transform:translateY(-2px);
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-pill{
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+  <h1>Kelas 8</h1>
+  <p>SMP Negeri 2 Kresek</p>
+</div>
+
+<div class="container">
+
+<div class="kelas-grid">
+  <div class="kelas-card">8.1<br>34 siswa</div>
+  <div class="kelas-card">8.2<br>34 siswa</div>
+  <div class="kelas-card">8.3<br>34 siswa</div>
+  <div class="kelas-card">8.4<br>36 siswa</div>
+  <div class="kelas-card">8.5<br>34 siswa</div>
+  <div class="kelas-card">8.6<br>37 siswa</div>
+</div>
+
+<div class="btn-center">
+  <a href="index.html" class="btn-pill">
+    ← Kembali ke Beranda
+  </a>
+</div>
+
+</div>
+
+</body>
+</html>
