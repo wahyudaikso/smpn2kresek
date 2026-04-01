@@ -508,7 +508,7 @@ Hubungi Kami
 
 <!-- TOTAL -->
 <div class="total-siswa">
-  676 Siswa
+  <span id="counter">0</span> Siswa
 </div>
 
 <!-- PER ANGKATAN -->
@@ -936,5 +936,29 @@ window.addEventListener("load", revealOnScroll);
   <a href="https://wa.me/6285882126104" target="_blank" class="wa-float">
   💬
 </a>
+
+<script>
+let count = 0;
+const target = 676;
+const speed = 5;
+
+function animateCounter(){
+  const counter = document.getElementById("counter");
+
+  const update = () => {
+    if(count < target){
+      count += 5;
+      counter.innerText = count;
+      setTimeout(update, speed);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  update();
+}
+
+window.addEventListener("load", animateCounter);
+</script>
 </body>
 </html>
