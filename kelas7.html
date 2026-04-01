@@ -76,6 +76,34 @@ body{
 .btn-kembali{
   box-shadow:0 5px 15px rgba(0,0,0,0.15);
 }
+
+/* posisi tengah */
+.btn-center{
+  text-align:center;
+  margin-top:30px;
+}
+
+/* tombol pill */
+.btn-pill{
+  display:inline-block;
+  padding:12px 28px;
+  background:#1e4fa3;
+  color:white;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+/* hover */
+.btn-pill:hover{
+  background:#1565c0;
+  transform:translateY(-2px);
+}
+
+.btn-pill{
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
 </style>
 
 </head>
@@ -98,9 +126,11 @@ body{
   <div class="kelas-card">7.7<br>35 siswa</div>
 </div>
 
-<a href="index.html" class="btn-kembali">
-  ← Kembali ke Beranda
-</a>
+<div class="btn-center">
+  <a href="index.html" class="btn-pill">
+    ← Kembali ke Beranda
+  </a>
+</div>
 
 </div>
 
