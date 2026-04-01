@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Siswa</title>
+
+  <style>
+    body{
+      font-family:Arial;
+      background:#f1f5f9;
+      margin:0;
+    }
+
+    .container{
+      max-width:1000px;
+      margin:50px auto;
+      background:white;
+      padding:40px;
+      border-radius:12px;
+      text-align:center;
+    }
+
+    .tahun-grid{
+      display:flex;
+      gap:20px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .tahun-card{
+      background:#f1f5f9;
+      padding:25px 40px;
+      border-radius:12px;
+      text-decoration:none;
+      color:#1e3a8a;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .tahun-card:hover{
+      background:#2563eb;
+      color:white;
+      transform:translateY(-5px);
+    }
+
+    .btn-kembali{
+      display:inline-block;
+      margin-top:30px;
+      padding:10px 20px;
+      background:#1e4fa3;
+      color:white;
+      border-radius:8px;
+      text-decoration:none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>Data Siswa</h2>
+  <p>Pilih Tahun Ajaran</p>
+
+  <div class="tahun-grid">
+
+    <a href="data-2023.html" class="tahun-card">
+      2023/2024
+    </a>
+
+    <a href="data-2024.html" class="tahun-card">
+      2024/2025
+    </a>
+
+    <a href="data-2025.html" class="tahun-card">
+      2025/2026
+    </a>
+
+  </div>
+
+  <a href="index.html" class="btn-kembali">
+    ← Kembali ke Beranda
+  </a>
+
+</div>
+
+</body>
+</html>
