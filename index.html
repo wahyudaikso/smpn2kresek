@@ -136,6 +136,22 @@ margin-bottom:30px;
 border-radius:0 0 20px 20px;
 overflow:hidden;
 }
+.hero-content{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  height:100%;
+  text-align:center;
+}
+.hero-content h1{
+  font-size:48px;
+  color:white;
+}
+
+.hero-content p{
+  color:#ddd;
+}
 /* SECTION */
 
 .container{
@@ -453,6 +469,13 @@ transition:all 1s ease;
   color:#0d47a1;
   letter-spacing:2px;
 }
+
+#beranda{
+  height:90vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 </style>
 
 </head>
@@ -491,8 +514,8 @@ z-index:1000;
 </header>
 
 <section id="beranda" style="
-  background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-  url('sekolah.jpg');
+ background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url('sekolah.jpg');
   background-size:cover;
   background-position:center;
 ">
