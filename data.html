@@ -94,7 +94,7 @@ z-index:1000;
 
   <h2>Data Siswa</h2>
   <p>Pilih Tahun Ajaran</p>
-<canvas id="chartSiswa" style="max-width:700px; margin:40px auto;"></canvas>
+<canvas id="chartSiswa" style="max-width:900px; margin:40px auto;"></canvas>
   
   <div class="tahun-grid">
 
@@ -123,24 +123,52 @@ const ctx = document.getElementById('chartSiswa').getContext('2d');
 
 new Chart(ctx, {
     type: 'line',
-    data: {
-        labels: ['2021', '2022', '2023', '2024', '2025'],
-        datasets: [{
-            label: 'Jumlah Siswa',
-            data: [450, 500, 480, 530, 600],
-            borderColor: '#0d47a1',
-            backgroundColor: 'rgba(13,71,161,0.1)',
-            tension: 0.4,
-            fill: true,
-            pointRadius: 5
-        }]
+    datasets: [{
+    label: 'Jumlah Siswa',
+    data: [450, 500, 480, 530, 600],
+    borderColor: '#0d47a1',
+    backgroundColor: 'rgba(13,71,161,0.15)',
+    tension: 0.4,
+    fill: true,
+    pointRadius: 6,
+    pointHoverRadius: 8,
+    pointBackgroundColor: '#0d47a1',
+    borderWidth: 3
+}]
     },
-    options: {
-        animation: {
-            duration: 1500,
-            easing: 'easeOutQuart'
-        }
+ options: {
+  animation: {
+    x: {
+      type: 'number',
+      easing: 'linear',
+      duration: 1500,
+      from: 0
+    },
+    y: {
+      type: 'number',
+      easing: 'easeOutQuart',
+      duration: 1500
     }
+  },
+  plugins: {
+    legend: {
+      labels: {
+        font: {
+          size: 14,
+          weight: 'bold'
+        }
+      }
+    }
+  },
+  scales: {
+    y: {
+      beginAtZero: true,
+      ticks: {
+        stepSize: 50
+      }
+    }
+  }
+}
 });
 </script>
 </body>
