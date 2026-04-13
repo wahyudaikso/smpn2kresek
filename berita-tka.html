@@ -114,6 +114,54 @@ p {
     max-height: 90%;
     border-radius: 10px;
 }
+
+/* LIGHTBOX */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* CLOSE */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+/* NEXT PREV */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover, .close:hover {
+    color: #ccc;
+}
 </style>
 
 </head>
@@ -131,8 +179,13 @@ p {
 </div>
 
 <!-- LIGHTBOX -->
-<div id="lightbox" onclick="closeImg()">
+<div id="lightbox">
+    <span class="close" onclick="closeImg()">×</span>
+
     <img id="lightbox-img">
+
+    <span class="prev" onclick="prevImg()">❮</span>
+    <span class="next" onclick="nextImg()">❯</span>
 </div>
 <p>
 SMPN 2 Kresek menyelenggarakan Tes Kemampuan Akademik (TKA) gelombang 1 
@@ -154,14 +207,55 @@ dengan fokus dan tertib.
 
 </div>
 <script>
+let images = document.querySelectorAll(".galeri img");
+let index = 0;
+
+// buka gambar
 function openImg(img) {
     document.getElementById("lightbox").style.display = "flex";
-    document.getElementById("lightbox-img").src = img.src;
+
+    images.forEach((el, i) => {
+        if (el === img) index = i;
+    });
+
+    showImg();
 }
 
+// tampilkan gambar
+function showImg() {
+    document.getElementById("lightbox-img").src = images[index].src;
+}
+
+// close
 function closeImg() {
     document.getElementById("lightbox").style.display = "none";
 }
+
+// next
+function nextImg() {
+    index = (index + 1) % images.length;
+    showImg();
+}
+
+// prev
+function prevImg() {
+    index = (index - 1 + images.length) % images.length;
+    showImg();
+}
+
+// SWIPE (HP)
+let startX = 0;
+
+document.getElementById("lightbox").addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) nextImg(); // swipe kiri
+    if (endX - startX > 50) prevImg(); // swipe kanan
+});
 </script>
 </body>
 </html>
