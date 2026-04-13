@@ -123,56 +123,58 @@ const ctx = document.getElementById('chartSiswa').getContext('2d');
 
 new Chart(ctx, {
     type: 'line',
-    datasets: [{
-    label: 'Jumlah Siswa',
-    data: [450, 500, 480, 530, 600],
-    borderColor: '#0d47a1',
-    backgroundColor: 'rgba(13,71,161,0.15)',
-    tension: 0.4,
-    fill: true,
-    pointRadius: 6,
-    pointHoverRadius: 8,
-    pointBackgroundColor: '#0d47a1',
-    borderWidth: 3
-}]
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei'],
+        datasets: [{
+            label: 'Jumlah Siswa',
+            data: [450, 500, 480, 530, 600],
+            borderColor: '#0d47a1',
+            backgroundColor: 'rgba(13,71,161,0.15)',
+            tension: 0.4,
+            fill: true,
+            pointRadius: 6,
+            pointHoverRadius: 8,
+            pointBackgroundColor: '#0d47a1',
+            borderWidth: 3
+        }]
     },
- options: {
-  animation: {
-    x: {
-      type: 'number',
-      easing: 'linear',
-      duration: 1500,
-      from: 0
-    },
-    y: {
-      type: 'number',
-      easing: 'easeOutQuart',
-      duration: 1500
-    }
-  },
-  plugins: {
-    legend: {
-      labels: {
-        font: {
-          size: 14,
-          weight: 'bold'
+options: {
+    animation: {
+        x: {
+            type: 'number',
+            easing: 'linear',
+            duration: 1500,
+            from: 0
+        },
+        y: {
+            type: 'number',
+            easing: 'easeOutQuart',
+            duration: 1500
         }
-      }
+    },
+    plugins: {
+        legend: {
+            labels: {
+                font: {
+                    size: 14,
+                    weight: 'bold'
+                }
+            }
+        }
+    },
+    scales: {
+        y: {
+            beginAtZero: true,
+            ticks: {
+                stepSize: 50
+            }
+        }
+    },
+    interaction: {   // ✅ PINDAH KE SINI
+        mode: 'index',
+        intersect: false
     }
-  },
-  scales: {
-    y: {
-      beginAtZero: true,
-      ticks: {
-        stepSize: 50
-      }
-    }
-  }
 }
-  interaction: {
-  mode: 'index',
-  intersect: false
-},
 });
 </script>
 </body>
