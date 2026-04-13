@@ -55,6 +55,25 @@ p {
     text-decoration: none;
     border-radius: 6px;
 }
+
+.galeri {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.galeri img {
+    width: 100%;
+    max-width: 430px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.galeri img:hover {
+    transform: scale(1.03);
+}
 </style>
 
 </head>
@@ -66,7 +85,15 @@ p {
 
 <p class="tanggal">6 April 2026</p>
 
-<img src="img/tka-2026.jpg">
+<div class="galeri">
+    <a href="img/tka-2026.jpg" target="_blank">
+        <img src="tka-2026.jpg">
+    </a>
+
+    <a href="img/tka2.jpg" target="_blank">
+        <img src="tka2.jpg">
+    </a>
+</div>
 
 <p>
 SMPN 2 Kresek menyelenggarakan Tes Kemampuan Akademik (TKA) gelombang 1 
