@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Berita Kokurikuler 2026</title>
 
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f1f5f9;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* JUDUL */
+h1 {
+    color: #0d47a1;
+}
+
+/* TANGGAL */
+.tanggal {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* GAMBAR */
+img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* TEXT */
+p {
+    line-height: 1.7;
+    color: #333;
+}
+
+/* TOMBOL */
+.btn-kembali {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 15px;
+    background: #0d47a1;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.galeri {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.galeri img {
+    width: 100%;
+    max-width: 430px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.galeri img:hover {
+    transform: scale(1.03);
+}
+
+/* GALERI */
+.galeri {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.galeri img {
+    width: 100%;
+    max-width: 430px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.galeri img:hover {
+    transform: scale(1.03);
+}
+
+/* LIGHTBOX */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* LIGHTBOX */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* CLOSE */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+/* NEXT PREV */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover, .close:hover {
+    color: #ccc;
+}
+
+.btn-kembali {
+    display: block;
+    margin: 30px auto 0;
+    width: fit-content;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Kegiatan Kokurikuler 2026</h1>
+
+<p class="tanggal">10 April 2026</p>
+
+<div class="galeri">
+    <img src="kokurikuler9.jpg" onclick="openImg(this)">
+    <img src="kokurikuler15.jpg" onclick="openImg(this)">
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+    <span class="close" onclick="closeImg()">×</span>
+
+    <img id="lightbox-img">
+
+    <span class="prev" onclick="prevImg()">❮</span>
+    <span class="next" onclick="nextImg()">❯</span>
+</div>
+<p>
+SMPN 2 Kresek menyelenggarakan kegiatan kokurikuler dengan tema 
+“Membentuk Pemimpin Tegas dan Cerdas untuk Mewujudkan Generasi Emas”.
+</p>
+
+<p>
+Kegiatan ini dilaksanakan pada tanggal 10–11 April 2026 di lingkungan 
+SMPN 2 Kresek dan diikuti oleh seluruh siswa/siswi kelas 7 dengan penuh 
+semangat dan antusias.
+</p>
+
+<p>
+Melalui kegiatan ini, diharapkan siswa dapat mengembangkan karakter 
+kepemimpinan, kedisiplinan, serta kemampuan berpikir kritis dan bertanggung jawab 
+dalam kehidupan sehari-hari.
+</p>
+
+<a href="index.html" class="btn-kembali">← Kembali</a>
+
+</div>
+<script>
+let images = document.querySelectorAll(".galeri img");
+let index = 0;
+
+// buka gambar
+function openImg(img) {
+    document.getElementById("lightbox").style.display = "flex";
+
+    images.forEach((el, i) => {
+        if (el === img) index = i;
+    });
+
+    showImg();
+}
+
+// tampilkan gambar
+function showImg() {
+    document.getElementById("lightbox-img").src = images[index].src;
+}
+
+// close
+function closeImg() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+// next
+function nextImg() {
+    index = (index + 1) % images.length;
+    showImg();
+}
+
+// prev
+function prevImg() {
+    index = (index - 1 + images.length) % images.length;
+    showImg();
+}
+
+// SWIPE (HP)
+let startX = 0;
+
+document.getElementById("lightbox").addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) nextImg(); // swipe kiri
+    if (endX - startX > 50) prevImg(); // swipe kanan
+});
+</script>
+</body>
+</html>
