@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kegiatan Sekolah</title>
+
+  <style>
+header{
+  background:#0d47a1;
+  padding:15px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+}
+body {
+    font-family: Arial;
+    padding-top: 100px;
+    background: linear-gradient(to bottom, #f5f7fa, #e4ecf7);
+}
+.title{
+  text-align:center;
+  color:#0d47a1;
+  margin-bottom:30px;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+}
+.grid img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.grid img {
+  transition: 0.3s ease;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.grid img:hover {
+  transform: scale(1.05);
+}
+.grid {
+  margin-top: 30px;
+}
+    
+#lightbox img {
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+    .back-button {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.back-button a {
+  display: inline-block;
+  background: #0d47a1;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+
+  /* 🔥 efek */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.back-button a:hover {
+  background: #1565c0;
+  transform: translateY(-3px);
+}
+    .back-button a:active {
+  transform: scale(0.97);
+}
+  </style>
+</head>
+
+<style>
+body{
+  font-family:Arial;
+  padding-top:100px;
+  background:#f5f7fa;
+}
+
+.title{
+  text-align:center;
+  color:#0d47a1;
+  margin-bottom:30px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.card h3{
+  padding:15px;
+  margin:0;
+  color:#0d47a1;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+</style>
+
+</head>
+<body>
+
+<header style="
+background:#0d47a1;
+padding:15px 40px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:sticky;
+top:0;
+z-index:1000;
+">
+
+<div style="display:flex;align-items:center;gap:12px;">
+<img src="logo.png" style="width:55px;">
+
+<div>
+<h2 style="color:white;margin:0;">SMP Negeri 2 Kresek</h2>
+<small style="color:#cfd8ff;">Kabupaten Tangerang</small>
+</div>
+</div>
+
+<nav style="display:flex;gap:25px;font-weight:bold;">
+<a href="index.html#beranda">Beranda</a>
+<a href="index.html#profil">Profil</a>
+<a href="index.html#guru">Guru</a>
+<a href="index.html#berita">Berita</a>
+<a href="galeri.html">Galeri</a>
+<a href="index.html#kontak">Kontak</a>
+</nav>
+
+</header>
+
+<h1 class="title">Kegiatan Kokurikuler 2026</h1>
+
+<div class="grid">
+
+<img src="kokurikuler1.jpg" class="fade-in" onclick="openImg(0)">
+<img src="kokurikuler2.jpg" class="fade-in" onclick="openImg(1)">
+<img src="kokurikuler3.jpg" class="fade-in" onclick="openImg(2)">
+<img src="kokurikuler4.jpg" class="fade-in" onclick="openImg(3)">
+<img src="kokurikuler5.jpg" class="fade-in" onclick="openImg(4)">
+<img src="kokurikuler6.jpg" class="fade-in" onclick="openImg(5)">
+<img src="kokurikuler7.jpg" class="fade-in" onclick="openImg(6)">
+<img src="kokurikuler8.jpg" class="fade-in" onclick="openImg(7)">
+<img src="kokurikuler9.jpg" class="fade-in" onclick="openImg(8)">
+<img src="kokurikuler10.jpg" class="fade-in" onclick="openImg(9)">
+<img src="kokurikuler11.jpg" class="fade-in" onclick="openImg(10)">
+<img src="kokurikuler12.jpg" class="fade-in" onclick="openImg(11)">
+<img src="kokurikuler13.jpg" class="fade-in" onclick="openImg(12)">
+<img src="kokurikuler14.jpg" class="fade-in" onclick="openImg(13)">
+<img src="kokurikuler15.jpg" class="fade-in" onclick="openImg(14)">
+<img src="kokurikuler16.jpg" class="fade-in" onclick="openImg(15)">
+<img src="kokurikuler17.jpg" class="fade-in" onclick="openImg(16)">
+<img src="kokurikuler18.jpg" class="fade-in" onclick="openImg(17)">
+<img src="kokurikuler19.jpg" class="fade-in" onclick="openImg(18)">
+<img src="kokurikuler20.jpg" class="fade-in" onclick="openImg(19)">
+<img src="kokurikuler21.jpg" class="fade-in" onclick="openImg(20)">
+<img src="kokurikuler22.jpg" class="fade-in" onclick="openImg(21)">
+<img src="kokurikuler23.jpg" class="fade-in" onclick="openImg(22)">
+<img src="kokurikuler24.jpg" class="fade-in" onclick="openImg(23)">
+<img src="kokurikuler25.jpg" class="fade-in" onclick="openImg(24)">
+<img src="kokurikuler26.jpg" class="fade-in" onclick="openImg(25)">
+<img src="kokurikuler27.jpg" class="fade-in" onclick="openImg(26)">
+<img src="kokurikuler28.jpg" class="fade-in" onclick="openImg(27)">
+<img src="kokurikuler29.jpg" class="fade-in" onclick="openImg(28)">
+<img src="kokurikuler30.jpg" class="fade-in" onclick="openImg(29)">
+</div>
+<div class="back-button">
+  <a href="kegiatan.html">← Kembali ke Kegiatan</a>
+</div>
+<div id="lightbox" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+justify-content:center;
+align-items:center;
+z-index:9999;
+">
+
+<!-- tombol close -->
+<span onclick="closeImg()" style="
+position:absolute;
+top:20px;
+right:30px;
+font-size:30px;
+color:white;
+cursor:pointer;
+">&times;</span>
+
+<!-- tombol kiri -->
+<span onclick="prevImg(event)" style="
+position:absolute;
+left:20px;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+color:white;
+cursor:pointer;
+">&#10094;</span>
+
+<!-- gambar -->
+<img id="lightbox-img" style="
+max-width:90vw;
+max-height:90vh;
+object-fit:contain;
+border-radius:12px;
+box-shadow:0 20px 60px rgba(0,0,0,0.7);
+display:block;
+margin:auto;
+">
+
+<!-- tombol kanan -->
+<span onclick="nextImg(event)" style="
+position:absolute;
+right:20px;
+top:50%;
+transform:translateY(-50%);
+font-size:40px;
+color:white;
+cursor:pointer;
+">&#10095;</span>
+
+</div>
+<script>
+let images = [
+ "ramadhan1.jpg",
+ "ramadhan2.jpg",
+ "ramadhan3.jpg",
+ "ramadhan4.jpg"
+];
+
+let currentIndex = 0;
+
+function openImg(index){
+ currentIndex = index;
+ document.getElementById("lightbox").style.display = "flex";
+ document.getElementById("lightbox-img").src = images[currentIndex];
+}
+
+function closeImg(){
+ document.getElementById("lightbox").style.display = "none";
+}
+
+function nextImg(e){
+ e.stopPropagation();
+ currentIndex = (currentIndex + 1) % images.length;
+ document.getElementById("lightbox-img").src = images[currentIndex];
+}
+
+function prevImg(e){
+ e.stopPropagation();
+ currentIndex = (currentIndex - 1 + images.length) % images.length;
+ document.getElementById("lightbox-img").src = images[currentIndex];
+}
+</script>
+</body>
+</html>
