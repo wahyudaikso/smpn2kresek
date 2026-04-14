@@ -1,144 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kegiatan Sekolah</title>
-
-  <style>
-header{
-  background:#0d47a1;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
-}
-
-.nav-container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:15px 40px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 40px; /* ⬅️ tambahin ini */
-}
-    
-body{
-  margin:0;
-  font-family:Arial;
-  padding-top:100px;
-  background:#f5f7fa;
-}
-
-    .title{
-      text-align:center;
-      color:#0d47a1;
-      margin-bottom:30px;
-    }
-    .back-button {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.back-button a {
-    display: inline-block;
-    background: #0d47a1;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.back-button a:hover {
-    background: #1565c0;
-    transform: translateY(-3px);
-}
-  </style>
-</head>
+<title>Galeri</title>
 
 <style>
 body{
-  font-family:Arial;
-  padding-top:100px;
-  background:#f5f7fa;
+font-family:Arial, sans-serif;
+background:#f5f7fa;
+margin:0;
 }
 
-.title{
-  text-align:center;
-  color:#0d47a1;
-  margin-bottom:30px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  padding:20px;
-}
-  .grid img {
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.grid img:hover {
-    transform: scale(1.05);
-}
-  .grid img {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.card{
-  background:white;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
-.card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-}
-
-.card h3{
-  padding:15px;
-  margin:0;
-  color:#0d47a1;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-}
-
-nav a:hover{
-  color:#cfd8ff;
-}
-</style>
-
-<body>
-<header style="
+/* NAVBAR */
+header{
 background:#0d47a1;
-padding:10px 30px;
+padding:12px 30px;
 display:flex;
 align-items:center;
 justify-content:space-between;
@@ -146,18 +21,108 @@ position:sticky;
 top:0;
 z-index:1000;
 box-shadow:0 2px 8px rgba(0,0,0,0.1);
-">
+}
 
+header img{
+width:45px;
+}
+
+header h2{
+color:white;
+margin:0;
+font-size:18px;
+}
+
+header small{
+color:#cfd8ff;
+font-size:11px;
+}
+
+nav{
+display:flex;
+gap:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+/* CONTAINER */
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* TITLE */
+.title{
+text-align:center;
+color:#0d47a1;
+margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+transition:0.3s;
+}
+
+.card:hover img{
+transform:scale(1.05);
+}
+
+.card h3{
+padding:15px;
+margin:0;
+color:#0d47a1;
+}
+
+/* LINK */
+a{
+text-decoration:none;
+color:inherit;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
 <div style="display:flex;align-items:center;gap:10px;">
-<img src="logo.png" style="width:45px;">
+<img src="logo.png">
 
 <div>
-<h2 style="color:white;margin:0;font-size:18px;">SMP Negeri 2 Kresek</h2>
-<small style="color:#cfd8ff;font-size:11px;">Kabupaten Tangerang</small>
+<h2>SMP Negeri 2 Kresek</h2>
+<small>Kabupaten Tangerang</small>
 </div>
 </div>
 
-<nav style="display:flex;gap:20px;font-weight:500;">
+<nav>
 <a href="index.html">Beranda</a>
 <a href="index.html#profil">Profil</a>
 <a href="index.html#guru">Guru</a>
@@ -165,44 +130,33 @@ box-shadow:0 2px 8px rgba(0,0,0,0.1);
 <a href="galeri.html">Galeri</a>
 <a href="index.html#kontak">Kontak</a>
 </nav>
-
 </header>
 
 <div class="container">
 
-<h1 class="title">Kegiatan Sekolah</h1>
+<h1 class="title">Galeri Kegiatan</h1>
 
 <div class="grid">
 
-  <!-- CARD 1 -->
-  <a href="ramadhan.html">
-    <div class="card">
-      <img src="ramadhan1.jpg">
-      <h3>Kegiatan Ramadhan 2026</h3>
-    </div>
-  </a>
-
-  <!-- CARD 2 -->
-  <a href="adiwiyata.html">
-    <div class="card">
-      <img src="adiwiyata.jpg">
-      <h3>Kegiatan Adiwiyata</h3>
-    </div>
-  </a>
-
-  <!-- CARD 3 -->
-  <a href="kokurikuler.html">
-    <div class="card">
-      <img src="kokurikuler1.jpg">
-      <h3>Kokurikuler 2026</h3>
-    </div>
-  </a>
-
-</div> <!-- ⛔ TUTUP GRID DI SINI -->
-
-<!-- ✅ TOMBOL DI LUAR GRID -->
-<div class="back-button">
-  <a href="galeri.html">← Kembali ke Galeri</a>
+<!-- RAMADHAN -->
+<a href="kegiatan.html">
+<div class="card">
+<img src="ramadhan1.jpg">
+<h3>Kegiatan Ramadhan 2026</h3>
 </div>
+</a>
+
+<!-- KOKURIKULER -->
+<a href="kokurikuler.html">
+<div class="card">
+<img src="kokurikuler1.jpg">
+<h3>Kokurikuler 2026</h3>
+</div>
+</a>
+
+</div>
+
+</div>
+
 </body>
 </html>
