@@ -5,164 +5,193 @@
 
 <style>
 body{
-  font-family:Arial;
-  padding-top:100px;
-  background:#f5f7fa;
+font-family:Arial, sans-serif;
+background:#f5f7fa;
+margin:0;
 }
 
-.title{
-  text-align:center;
-  color:#0d47a1;
-  margin-bottom:30px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  padding:20px;
-}
-
-.card{
-  background:white;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
-
-.card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-}
-
-.card h3{
-  padding:15px;
-  margin:0;
-  color:#0d47a1;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-  .back-button {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.back-button a {
-  display: inline-block;
-  background: #0d47a1;
-  color: white;
-  padding: 12px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  transition: 0.3s;
-}
-
-.back-button a:hover {
-  background: #1565c0;
-  transform: translateY(-3px);
-}
-</style>
-
-<body>
-<header style="
+/* NAVBAR */
+header{
 background:#0d47a1;
-padding:15px 40px;
+padding:12px 30px;
 display:flex;
 align-items:center;
 justify-content:space-between;
 position:sticky;
 top:0;
 z-index:1000;
-">
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
 
-<div style="display:flex;align-items:center;gap:12px;">
-<img src="logo.png" style="width:55px;">
+header img{
+width:45px;
+}
+
+header h2{
+color:white;
+margin:0;
+font-size:18px;
+}
+
+header small{
+color:#cfd8ff;
+font-size:11px;
+}
+
+nav{
+display:flex;
+gap:20px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+/* CONTAINER */
+.container{
+max-width:1200px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* TITLE */
+.title{
+text-align:center;
+color:#0d47a1;
+margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+transition:0.3s;
+}
+
+.card:hover img{
+transform:scale(1.05);
+}
+
+.card h3{
+padding:15px;
+margin:0;
+color:#0d47a1;
+}
+
+.card-link{
+display:block;
+}
+
+/* LINK */
+a{
+text-decoration:none;
+color:inherit;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<div style="display:flex;align-items:center;gap:10px;">
+<img src="logo.png">
 
 <div>
-<h2 style="color:white;margin:0;">SMP Negeri 2 Kresek</h2>
-<small style="color:#cfd8ff;">Kabupaten Tangerang</small>
+<h2>SMP Negeri 2 Kresek</h2>
+<small>Kabupaten Tangerang</small>
 </div>
 </div>
 
-<nav style="display:flex;gap:25px;font-weight:bold;">
-<a href="index.html#beranda">Beranda</a>
+<nav>
+<a href="index.html">Beranda</a>
 <a href="index.html#profil">Profil</a>
 <a href="index.html#guru">Guru</a>
 <a href="index.html#berita">Berita</a>
 <a href="galeri.html">Galeri</a>
 <a href="index.html#kontak">Kontak</a>
 </nav>
-
 </header>
+
+<div class="container">
 
 <h1 class="title">Ekstrakurikuler</h1>
 
 <div class="grid">
 
-<a href="hadroh.html">
+<a href="hadroh.html" class="card-link">
   <div class="card">
     <img src="hadroh1.jpg">
     <h3>Hadroh</h3>
   </div>
 </a>
 
-<a href="paskibra.html">
+<a href="paskibra.html" class="card-link">
   <div class="card">
     <img src="paskibra.jpg">
     <h3>Paskibra</h3>
   </div>
 </a>
 
-<a href="tari.html">
+<a href="tari.html" class="card-link">
   <div class="card">
     <img src="tari2.jpg">
     <h3>Tari</h3>
   </div>
 </a>  
   
-<a href="pmr.html">
+<a href="pmr.html" class="card-link">
   <div class="card">
     <img src="pmr.jpg">
     <h3>PMR</h3>
   </div>
 </a>
   
-<a href="pramuka.html">
+<a href="pramuka.html" class="card-link">
   <div class="card">
     <img src="pramuka1.jpg">
     <h3>Pramuka</h3>
   </div>
 </a>
 
-<a href="futsal.html">
+<a href="futsal.html" class="card-link">
   <div class="card">
     <img src="futsal.jpg">
     <h3>Futsal</h3>
   </div>
 </a>
   
-<a href="voli.html">
+<a href="voli.html" class="card-link">
   <div class="card">
     <img src="voli1.jpg">
     <h3>Voli</h3>
   </div>
 </a>
 
-</div>
-<div class="back-button">
-  <a href="galeri.html">← Kembali ke Galeri</a>
 </div>
 
 </body>
