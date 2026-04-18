@@ -130,10 +130,10 @@ const ctx = document.getElementById('chartSiswa').getContext('2d');
 new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mei'],
+        labels: ['2023/2024', '2024/2025', '2025/2026'],
         datasets: [{
-            label: 'Jumlah Siswa',
-            data: [450, 500, 480, 530, 600],
+            label: 'Jumlah Siswa per Tahun Ajaran',
+            data: [479, 505, 676],
             borderColor: '#0d47a1',
             backgroundColor: 'rgba(13,71,161,0.15)',
             tension: 0.4,
@@ -144,43 +144,43 @@ new Chart(ctx, {
             borderWidth: 3
         }]
     },
-options: {
-    animation: {
-        x: {
-            type: 'number',
-            easing: 'linear',
-            duration: 1500,
-            from: 0
+    options: {
+        animation: {
+            x: {
+                type: 'number',
+                easing: 'linear',
+                duration: 1500,
+                from: 0
+            },
+            y: {
+                type: 'number',
+                easing: 'easeOutQuart',
+                duration: 1500
+            }
         },
-        y: {
-            type: 'number',
-            easing: 'easeOutQuart',
-            duration: 1500
-        }
-    },
-    plugins: {
-        legend: {
-            labels: {
-                font: {
-                    size: 14,
-                    weight: 'bold'
+        plugins: {
+            legend: {
+                labels: {
+                    font: {
+                        size: 14,
+                        weight: 'bold'
+                    }
                 }
             }
-        }
-    },
-    scales: {
-        y: {
-            beginAtZero: true,
-            ticks: {
-                stepSize: 50
+        },
+        scales: {
+            y: {
+                beginAtZero: true,
+                ticks: {
+                    stepSize: 100
+                }
             }
+        },
+        interaction: {
+            mode: 'index',
+            intersect: false
         }
-    },
-    interaction: {   // ✅ PINDAH KE SINI
-        mode: 'index',
-        intersect: false
     }
-}
 });
 </script>
 </body>
