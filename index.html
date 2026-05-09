@@ -688,6 +688,49 @@ transform:translateY(-5px);
 .dropdown:hover .dropdown-menu {
     display: block;
 }
+
+/* FIX DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: white;
+    min-width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 999999;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background: #eef2ff;
+    border-radius: 6px;
+}
+
+/* BIAR GA KETUTUP HERO */
+header {
+    z-index: 999999;
+}
+
+.hero::before {
+    pointer-events: none;
+}
 </style>
 
 </head>
@@ -725,8 +768,9 @@ z-index:1000;
 
 <!-- SISTEM INFORMASI -->
 <div class="dropdown">
-  <a href="javascript:void(0)">Sistem Informasi ▼</a>
-  <div class="dropdown-menu">
+  <a href="#" onclick="toggleDropdown(event)">Sistem Informasi ▼</a>
+  
+  <div class="dropdown-menu" id="menuSI">
     <a href="https://smpn2kresek.infinityfree.me/login.php">👨‍🎓 Siswa</a>
     <a href="https://smpn2kresek.infinityfree.me/admin_login.php">🏢 Tata Usaha</a>
   </div>
@@ -1231,6 +1275,20 @@ function animateCounter(){
 }
 
 window.onload = animateCounter;
+</script>
+
+<script>
+function toggleDropdown(e){
+    e.preventDefault();
+    document.getElementById("menuSI").classList.toggle("show");
+}
+
+// klik luar = nutup dropdown
+window.addEventListener("click", function(e){
+    if (!e.target.closest(".dropdown")) {
+        document.getElementById("menuSI").classList.remove("show");
+    }
+});
 </script>
 </body>
 </html>
