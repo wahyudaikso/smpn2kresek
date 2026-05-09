@@ -649,6 +649,40 @@ background:#0d47a1;
 color:white;
 transform:translateY(-5px);
 }
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 10px;
+    z-index: 999;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background: #f0f0f0;
+    border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
 </style>
 
 </head>
@@ -675,13 +709,23 @@ z-index:1000;
 </div>
 </div>
 
-<nav style="display:flex;gap:25px;font-weight:bold;">
+<nav style="display:flex;gap:25px;font-weight:bold;align-items:center;">
+
 <a href="#beranda">Beranda</a>
 <a href="#profil">Profil</a>
 <a href="#guru">Guru</a>
 <a href="#berita">Berita</a>
 <a href="galeri.html">Galeri</a>
 <a href="#kontak">Kontak</a>
+
+<!-- SISTEM INFORMASI -->
+<div class="dropdown">
+  <a href="#">Sistem Informasi ▼</a>
+  <div class="dropdown-menu">
+    <a href="https://smpn2kresek.infinityfree.me/login.php">👨‍🎓 Siswa</a>
+    <a href="https://smpn2kresek.infinityfree.me/admin_login.php">🏢 Tata Usaha</a>
+  </div>
+</div>
 </nav>
 </header>
 
