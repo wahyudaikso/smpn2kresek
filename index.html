@@ -153,6 +153,10 @@ overflow:hidden;
 .hero-content p{
   color:#ddd;
 }
+
+header {
+    z-index: 10000;
+}
 /* SECTION */
 
 .container{
@@ -652,32 +656,33 @@ transform:translateY(-5px);
 
 .dropdown {
     position: relative;
+    z-index: 9999;
 }
 
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 35px;
-    left: 0;
+    top: 40px;
+    right: 0;
     background: white;
     min-width: 200px;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     padding: 10px;
-    z-index: 999;
+    z-index: 99999;
 }
 
 .dropdown-menu a {
     display: block;
-    padding: 8px 10px;
+    padding: 10px;
     color: #333;
     text-decoration: none;
-    font-size: 14px;
+    cursor: pointer;
 }
 
 .dropdown-menu a:hover {
-    background: #f0f0f0;
-    border-radius: 5px;
+    background: #f1f5ff;
+    border-radius: 6px;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -720,7 +725,7 @@ z-index:1000;
 
 <!-- SISTEM INFORMASI -->
 <div class="dropdown">
-  <a href="#">Sistem Informasi ▼</a>
+  <a href="javascript:void(0)">Sistem Informasi ▼</a>
   <div class="dropdown-menu">
     <a href="https://smpn2kresek.infinityfree.me/login.php">👨‍🎓 Siswa</a>
     <a href="https://smpn2kresek.infinityfree.me/admin_login.php">🏢 Tata Usaha</a>
