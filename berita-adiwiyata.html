@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>SMP Negeri 2 Kresek Menuju Adiwiyata Nasional</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#eef3f9;
+    color:#333;
+}
+
+.container{
+    max-width:950px;
+    margin:45px auto;
+    background:#fff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+h1{
+    color:#0d47a1;
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.tanggal{
+    color:#777;
+    font-size:15px;
+    margin-bottom:25px;
+}
+
+.galeri{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.galeri img{
+    flex:1;
+    min-width:280px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+    object-fit:cover;
+}
+
+.galeri img:hover{
+    transform:scale(1.03);
+}
+
+p{
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:22px;
+    text-align:justify;
+}
+
+.btn-kembali{
+    display:block;
+    width:fit-content;
+    margin:35px auto 0;
+    padding:12px 25px;
+    background:#0d47a1;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+    font-weight:500;
+}
+
+.btn-kembali:hover{
+    background:#08367d;
+}
+
+#lightbox{
+    display:none;
+    position:fixed;
+    z-index:999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
+}
+
+#lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:12px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:35px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+.prev,.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    color:white;
+    font-size:45px;
+    cursor:pointer;
+    user-select:none;
+    padding:10px;
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+
+.prev:hover,
+.next:hover,
+.close:hover{
+    color:#ddd;
+}
+
+@media(max-width:768px){
+
+.container{
+    margin:20px;
+    padding:22px;
+}
+
+h1{
+    font-size:30px;
+}
+
+p{
+    font-size:16px;
+}
+
+.galeri{
+    flex-direction:column;
+}
+
+.galeri img{
+    min-width:100%;
+}
+
+.prev,
+.next{
+    font-size:35px;
+}
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>SMP Negeri 2 Kresek Menuju Adiwiyata Nasional</h1>
+
+<p class="tanggal">28 April 2026</p>
+
+<div class="galeri">
+    <img src="adiwiyata1.jpg" onclick="openImg(this)">
+    <img src="adiwiyata2.jpg" onclick="openImg(this)">
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+    <span class="close" onclick="closeImg()">×</span>
+
+    <img id="lightbox-img">
+
+    <span class="prev" onclick="prevImg()">❮</span>
+    <span class="next" onclick="nextImg()">❯</span>
+</div>
+  
+<p>
+Sebagai bentuk komitmen dalam mewujudkan sekolah yang peduli dan berbudaya lingkungan, SMP Negeri 2 Kresek terus melakukan berbagai upaya menuju predikat <strong>Adiwiyata Nasional</strong>. Seluruh warga sekolah berperan aktif dalam menciptakan lingkungan belajar yang bersih, hijau, sehat, dan nyaman.
+</p>
+
+<p>
+Salah satu kegiatan yang rutin dilakukan adalah perawatan tanaman di lingkungan sekolah. Peserta didik bersama bapak dan ibu guru bergotong royong menyiram tanaman, membersihkan area taman, serta merawat berbagai jenis tanaman agar tetap tumbuh subur dan memperindah lingkungan sekolah.
+</p>
+
+<p>
+Selain menjaga keindahan taman, warga sekolah juga terus membiasakan perilaku ramah lingkungan melalui pengurangan sampah, penanaman pohon, serta pemanfaatan limbah plastik menjadi barang yang lebih bermanfaat. Melalui berbagai kegiatan tersebut, SMP Negeri 2 Kresek berharap dapat mewujudkan budaya peduli lingkungan secara berkelanjutan sekaligus meraih predikat <strong>Adiwiyata Nasional</strong>.
+</p>
+  
+<a href="index.html#berita" class="btn-kembali">
+← Kembali
+</a>
+</div>
+<script>
+let images = document.querySelectorAll(".galeri img");
+let index = 0;
+
+// buka gambar
+function openImg(img) {
+    document.getElementById("lightbox").style.display = "flex";
+
+    images.forEach((el, i) => {
+        if (el === img) index = i;
+    });
+
+    showImg();
+}
+
+// tampilkan gambar
+function showImg() {
+    document.getElementById("lightbox-img").src = images[index].src;
+}
+
+// close
+function closeImg() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+// next
+function nextImg() {
+    index = (index + 1) % images.length;
+    showImg();
+}
+
+// prev
+function prevImg() {
+    index = (index - 1 + images.length) % images.length;
+    showImg();
+}
+
+// SWIPE (HP)
+let startX = 0;
+
+document.getElementById("lightbox").addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) nextImg(); // swipe kiri
+    if (endX - startX > 50) prevImg(); // swipe kanan
+});
+</script>
+</body>
+</html>
