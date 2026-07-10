@@ -1,23 +1,268 @@
-<h2>Kegiatan Tadarus Pagi Siswa SMP Negeri 2 Kresek</h2>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kegiatan Tadarus Pagi Siswa SMP Negeri 2 Kresek</title>
 
-<p><b>15 April 2026</b></p>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-<img src="tadarus1.jpg" width="100%" style="border-radius:10px;">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+body{
+    font-family:'Poppins',sans-serif;
+    background:#eef3f9;
+    color:#333;
+}
+
+.container{
+    max-width:950px;
+    margin:45px auto;
+    background:#fff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+h1{
+    color:#0d47a1;
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.tanggal{
+    color:#777;
+    font-size:15px;
+    margin-bottom:25px;
+}
+
+.galeri{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.galeri img{
+    flex:1;
+    min-width:280px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+    object-fit:cover;
+}
+
+.galeri img:hover{
+    transform:scale(1.03);
+}
+
+p{
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:22px;
+    text-align:justify;
+}
+
+.btn-kembali{
+    display:block;
+    width:fit-content;
+    margin:35px auto 0;
+    padding:12px 25px;
+    background:#0d47a1;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+    font-weight:500;
+}
+
+.btn-kembali:hover{
+    background:#08367d;
+}
+
+#lightbox{
+    display:none;
+    position:fixed;
+    z-index:999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
+}
+
+#lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:12px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:35px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+.prev,.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    color:white;
+    font-size:45px;
+    cursor:pointer;
+    user-select:none;
+    padding:10px;
+}
+
+.prev{
+    left:20px;
+}
+
+.next{
+    right:20px;
+}
+
+.prev:hover,
+.next:hover,
+.close:hover{
+    color:#ddd;
+}
+
+@media(max-width:768px){
+
+.container{
+    margin:20px;
+    padding:22px;
+}
+
+h1{
+    font-size:30px;
+}
+
+p{
+    font-size:16px;
+}
+
+.galeri{
+    flex-direction:column;
+}
+
+.galeri img{
+    min-width:100%;
+}
+
+.prev,
+.next{
+    font-size:35px;
+}
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Kegiatan Tadarus Pagi Siswa SMP Negeri 2 Kresek</h1>
+
+<p class="tanggal">15 April 2026</p>
+
+<div class="galeri">
+    <img src="tadarus1.jpg" onclick="openImg(this)">
+    <img src="tadarus2.jpg" onclick="openImg(this)">
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+    <span class="close" onclick="closeImg()">×</span>
+
+    <img id="lightbox-img">
+
+    <span class="prev" onclick="prevImg()">❮</span>
+    <span class="next" onclick="nextImg()">❯</span>
+</div>
 <p>
-Salah satu kegiatan pembiasaan untuk pembentukan karakter siswa di SMP Negeri 2 Kresek adalah kegiatan tadarus Al-Qur'an bersama surat-surat dalam Juz 30. Kegiatan ini bertujuan untuk menumbuhkan keimanan dan ketakwaan peserta didik kepada Allah SWT serta membiasakan siswa mencintai Al-Qur'an dalam kehidupan sehari-hari.
+Salah satu kegiatan pembiasaan yang rutin dilaksanakan di SMP Negeri 2 Kresek adalah kegiatan
+<strong>tadarus Al-Qur'an bersama surat-surat dalam Juz 30.</strong> Kegiatan ini merupakan bagian dari
+program pembinaan karakter religius yang bertujuan untuk menumbuhkan keimanan dan ketakwaan
+peserta didik kepada Allah SWT sejak dini.
 </p>
 
 <p>
-Kegiatan tadarus dilaksanakan secara rutin setiap hari <b>Rabu</b> dan <b>Kamis</b> mulai pukul <b>07.00 WIB sampai dengan 07.30 WIB</b> sebelum proses pembelajaran dimulai.
+Kegiatan tadarus dilaksanakan secara rutin setiap hari <strong>Rabu dan Kamis</strong> selama kurang lebih
+30 menit, dimulai pada pukul <strong>07.00 sampai dengan 07.30 WIB</strong>, sebelum kegiatan belajar mengajar
+dimulai. Seluruh peserta didik mengikuti kegiatan dengan tertib dan penuh kekhusyukan.
 </p>
 
 <p>
-Selama kegiatan berlangsung, siswa dibimbing oleh guru Pendidikan Agama Islam (PAI) serta didampingi oleh bapak dan ibu guru SMP Negeri 2 Kresek sehingga kegiatan berjalan dengan tertib, khidmat, dan penuh semangat.
+Selama kegiatan berlangsung, peserta didik dibimbing oleh guru Pendidikan Agama Islam (PAI)
+serta didampingi oleh bapak dan ibu guru SMP Negeri 2 Kresek. Melalui kegiatan ini diharapkan
+nilai-nilai religius, kedisiplinan, serta akhlak mulia dapat terus tertanam dalam kehidupan
+sehari-hari peserta didik.
 </p>
+<a href="index.html#berita" class="btn-kembali">
+← Kembali
+</a>
+</div>
+<script>
+let images = document.querySelectorAll(".galeri img");
+let index = 0;
 
-<img src="tadarus2.jpg" width="100%" style="border-radius:10px;margin-top:20px;">
+// buka gambar
+function openImg(img) {
+    document.getElementById("lightbox").style.display = "flex";
 
-<p>
-Melalui kegiatan pembiasaan ini diharapkan peserta didik tidak hanya memiliki kemampuan akademik yang baik, tetapi juga memiliki karakter religius, disiplin, serta akhlak mulia sebagai bekal dalam kehidupan bermasyarakat.
-</p>
+    images.forEach((el, i) => {
+        if (el === img) index = i;
+    });
+
+    showImg();
+}
+
+// tampilkan gambar
+function showImg() {
+    document.getElementById("lightbox-img").src = images[index].src;
+}
+
+// close
+function closeImg() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+// next
+function nextImg() {
+    index = (index + 1) % images.length;
+    showImg();
+}
+
+// prev
+function prevImg() {
+    index = (index - 1 + images.length) % images.length;
+    showImg();
+}
+
+// SWIPE (HP)
+let startX = 0;
+
+document.getElementById("lightbox").addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) nextImg(); // swipe kiri
+    if (endX - startX > 50) prevImg(); // swipe kanan
+});
+</script>
+</body>
+</html>
