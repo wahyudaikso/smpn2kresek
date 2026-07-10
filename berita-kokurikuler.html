@@ -5,168 +5,165 @@
 <title>Berita Kokurikuler 2026</title>
 
 <style>
-body {
-    font-family: Arial;
-    margin: 0;
-    background: #f1f5f9;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* CONTAINER */
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
+body{
+    font-family:'Poppins',sans-serif;
+    background:#eef3f9;
+    color:#333;
 }
 
-/* JUDUL */
-h1 {
-    color: #0d47a1;
+.container{
+    max-width:950px;
+    margin:45px auto;
+    background:#fff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-/* TANGGAL */
-.tanggal {
-    color: gray;
-    font-size: 14px;
-    margin-bottom: 20px;
+h1{
+    color:#0d47a1;
+    font-size:40px;
+    margin-bottom:10px;
 }
 
-/* GAMBAR */
-img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 20px;
+.tanggal{
+    color:#777;
+    font-size:15px;
+    margin-bottom:25px;
 }
 
-/* TEXT */
-p {
-    line-height: 1.7;
-    color: #333;
+.galeri{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
 }
 
-/* TOMBOL */
-.btn-kembali {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 8px 15px;
-    background: #0d47a1;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
+.galeri img{
+    flex:1;
+    min-width:280px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+    object-fit:cover;
 }
 
-.galeri {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+.galeri img:hover{
+    transform:scale(1.03);
 }
 
-.galeri img {
-    width: 100%;
-    max-width: 430px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
+p{
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:22px;
+    text-align:justify;
 }
 
-.galeri img:hover {
-    transform: scale(1.03);
+.btn-kembali{
+    display:block;
+    width:fit-content;
+    margin:35px auto 0;
+    padding:12px 25px;
+    background:#0d47a1;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    transition:.3s;
+    font-weight:500;
 }
 
-/* GALERI */
-.galeri {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+.btn-kembali:hover{
+    background:#08367d;
 }
 
-.galeri img {
-    width: 100%;
-    max-width: 430px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
+#lightbox{
+    display:none;
+    position:fixed;
+    z-index:999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
 }
 
-.galeri img:hover {
-    transform: scale(1.03);
+#lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:12px;
 }
 
-/* LIGHTBOX */
-#lightbox {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
+.close{
+    position:absolute;
+    top:20px;
+    right:35px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
 }
 
-#lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
+.prev,.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    color:white;
+    font-size:45px;
+    cursor:pointer;
+    user-select:none;
+    padding:10px;
 }
 
-/* LIGHTBOX */
-#lightbox {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
+.prev{
+    left:20px;
 }
 
-#lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
+.next{
+    right:20px;
 }
 
-/* CLOSE */
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 35px;
-    color: white;
-    cursor: pointer;
+.prev:hover,
+.next:hover,
+.close:hover{
+    color:#ddd;
 }
 
-/* NEXT PREV */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    font-size: 40px;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    user-select: none;
+@media(max-width:768px){
+
+.container{
+    margin:20px;
+    padding:22px;
 }
 
-.prev { left: 20px; }
-.next { right: 20px; }
-
-.prev:hover, .next:hover, .close:hover {
-    color: #ccc;
+h1{
+    font-size:30px;
 }
 
-.btn-kembali {
-    display: block;
-    margin: 30px auto 0;
-    width: fit-content;
+p{
+    font-size:16px;
+}
+
+.galeri{
+    flex-direction:column;
+}
+
+.galeri img{
+    min-width:100%;
+}
+
+.prev,
+.next{
+    font-size:35px;
+}
 }
 </style>
 
@@ -194,24 +191,21 @@ p {
     <span class="next" onclick="nextImg()">❯</span>
 </div>
 <p>
-SMPN 2 Kresek menyelenggarakan kegiatan kokurikuler dengan tema 
-“Membentuk Pemimpin Tegas dan Cerdas untuk Mewujudkan Generasi Emas”.
+SMPN 2 Kresek menyelenggarakan kegiatan kokurikuler dengan tema
+<strong>"Membentuk Pemimpin Tegas dan Cerdas untuk Mewujudkan Generasi Emas"</strong>.
 </p>
 
 <p>
-Kegiatan ini dilaksanakan pada tanggal 10–11 April 2026 di lingkungan 
-SMPN 2 Kresek dan diikuti oleh seluruh siswa/siswi kelas 7 dengan penuh 
-semangat dan antusias.
+Kegiatan ini dilaksanakan pada tanggal 10–11 April 2026 di lingkungan SMP Negeri 2 Kresek dan diikuti oleh seluruh peserta didik kelas VII dengan penuh semangat dan antusias.
 </p>
 
 <p>
-Melalui kegiatan ini, diharapkan siswa dapat mengembangkan karakter 
-kepemimpinan, kedisiplinan, serta kemampuan berpikir kritis dan bertanggung jawab 
-dalam kehidupan sehari-hari.
+Melalui kegiatan ini, diharapkan peserta didik mampu mengembangkan karakter kepemimpinan, kedisiplinan, tanggung jawab, serta kemampuan berpikir kritis sebagai bekal dalam kehidupan sehari-hari.
 </p>
 
-<a href="index.html" class="btn-kembali">← Kembali</a>
-
+<a href="index.html#berita" class="btn-kembali">
+← Kembali
+</a>
 </div>
 <script>
 let images = document.querySelectorAll(".galeri img");
