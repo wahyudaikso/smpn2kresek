@@ -324,6 +324,106 @@ margin:auto;
 line-height:1.7;
 }
 
+/* ===========================
+   SAMBUTAN KEPALA SEKOLAH
+=========================== */
+
+.kepsek-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:45px;
+
+    margin-top:35px;
+
+}
+
+.kepsek-foto{
+
+    flex:0 0 260px;
+
+    text-align:center;
+
+}
+
+.kepsek-foto img{
+
+    width:250px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+}
+
+.kepsek-text{
+
+    flex:1;
+
+}
+
+.kepsek-text h3{
+
+    color:#0d47a1;
+
+    margin-bottom:18px;
+
+    font-size:28px;
+
+}
+
+.kepsek-text p{
+
+    text-align:justify;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+
+    font-size:17px;
+
+}
+
+@media(max-width:768px){
+
+.kepsek-box{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.kepsek-foto{
+
+    flex:none;
+
+}
+
+.kepsek-foto img{
+
+    width:180px;
+
+}
+
+.kepsek-text h3{
+
+    font-size:24px;
+
+}
+
+.kepsek-text p{
+
+    text-align:justify;
+
+    font-size:16px;
+
+}
+
+}
+
 /* GURU */
 
 .guru-grid{
@@ -1048,22 +1148,47 @@ Hubungi Kami
 </section>
 
 <section class="container box-putih reveal">
-  <h2 class="section-title">Sambutan Kepala Sekolah</h2>
 
-  <div style="display:flex; gap:40px; align-items:center; flex-wrap:wrap;">
+    <h2 class="section-title">
+        Sambutan Kepala Sekolah
+    </h2>
 
-    <img src="https://via.placeholder.com/100" style="width:250px; border-radius:10px;">
-    
-    <p style="max-width:700px; line-height:1.8;">
-      Assalamu'alaikum Warahmatullahi Wabarakatuh
-      Selamat datang di website resmi SMPN 2 Kresek Kabupaten Tangerang. Website ini dibuat sebagai media informasi sekolah bagi siswa, orang tua, dan masyarakat luas mengenai kegiatan, prestasi, serta perkembangan sekolah.
-      Kami berharap website ini dapat memberikan manfaat dan menjadi sarana komunikasi yang baik antara sekolah dan masyarakat.
-      Wassalamuálaikum Warahmatullahi Wabarakatuh
-    </p>
+    <div class="kepsek-box">
 
-  </div>
+        <div class="kepsek-foto">
+            <img src="kepsek.jpg" alt="Kepala Sekolah">
+        </div>
+
+        <div class="kepsek-text">
+
+            <h3>Nama Kepala Sekolah, S.Pd.</h3>
+
+            <p>
+                Assalamu'alaikum Warahmatullahi Wabarakatuh.
+            </p>
+
+            <p>
+                Selamat datang di website resmi SMP Negeri 2 Kresek Kabupaten Tangerang.
+                Website ini kami hadirkan sebagai media informasi dan komunikasi bagi peserta didik,
+                orang tua, alumni, serta masyarakat untuk memperoleh berbagai informasi mengenai
+                kegiatan, prestasi, dan perkembangan sekolah.
+            </p>
+
+            <p>
+                Kami berharap website ini dapat memberikan manfaat, meningkatkan pelayanan informasi,
+                serta menjadi sarana komunikasi yang efektif antara sekolah dan masyarakat dalam
+                mewujudkan pendidikan yang berkualitas.
+            </p>
+
+            <p>
+                Wassalamu'alaikum Warahmatullahi Wabarakatuh.
+            </p>
+
+        </div>
+
+    </div>
+
 </section>
-
 </div>
   
 <section class="container box-putih reveal">
