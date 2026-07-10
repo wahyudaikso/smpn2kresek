@@ -166,7 +166,12 @@ position:relative;
 z-index:2;
 }
 .hero{
-padding:180px 20px;
+    padding:160px 20px 120px;
+    background-size:cover;
+    background-position:center;
+    border-radius:0 0 25px 25px;
+    overflow:hidden;
+    position:relative;
 }
 
 .hero h1{
@@ -175,13 +180,74 @@ letter-spacing:1px;
 }
 
 .hero-title{
-font-size:55px;
-margin-bottom:10px;
+    font-size:58px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:12px;
 }
  
 .hero-text{
-font-size:22px;
-margin-bottom:30px;
+    font-size:22px;
+    color:#f1f1f1;
+    margin-bottom:35px;
+}
+
+/* ===========================
+   HERO RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.hero{
+
+    padding:120px 20px 80px;
+
+}
+
+.hero-title{
+
+    font-size:34px;
+
+    line-height:1.3;
+
+}
+
+.hero-text{
+
+    font-size:17px;
+
+    margin-bottom:25px;
+
+}
+
+.hero-content{
+
+    padding:0 10px;
+
+}
+
+.hero-content div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    width:100%;
+
+}
+
+.hero-content .btn{
+
+    width:100%;
+
+    max-width:260px;
+
+    margin:auto;
+
+}
+
 }
 
 @keyframes zoomHero{
@@ -220,6 +286,18 @@ overflow:hidden;
 
 header {
     z-index: 10000;
+}
+
+.hero-button{
+
+    display:flex;
+
+    gap:15px;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
 }
 /* SECTION */
 
@@ -913,7 +991,7 @@ url('sekolah.jpg');
 
 <p class="hero-text">Berkarakter, Bahagia, Yes.</p>
 
-<div style="display:flex;gap:15px;justify-content:center;flex-wrap:wrap;">
+<div class="hero-button">
 
 <a href="#profil" class="btn btn-primary">
 Tentang Kami
